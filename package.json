@@ -1,13 +1,12 @@
 {
-  "name": "@landing/003-next",
+  "name": "thi-portfolio",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev --port 3725",
     "build": "next build",
     "serve": "next start",
-    "export": "next export",
-    "postbuild": "next-sitemap"
+    "export": "next export"
   },
   "dependencies": {
     "@fontsource-variable/open-sans": "^5.0.2",
