@@ -22,7 +22,7 @@ export default function CustomApp({ Component, pageProps }) {
     <ThemeProvider theme={theme}>
       <StickyProvider>
         <VideoProvider>
-          <Component {...pageProps} />;
+          <Component {...pageProps} />
         </VideoProvider>
       </StickyProvider>
     </ThemeProvider>

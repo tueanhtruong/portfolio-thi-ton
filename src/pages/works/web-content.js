@@ -1,14 +1,213 @@
+import banner1 from "assets/web-contents/banner1.webp";
+import banner2 from "assets/web-contents/banner2.webp";
+import banner3 from "assets/web-contents/banner3.webp";
+import gift1 from "assets/web-contents/g1.webp";
+import gift10 from "assets/web-contents/g10.webp";
+import gift11 from "assets/web-contents/g11.webp";
+import gift12 from "assets/web-contents/g12.webp";
+import gift13 from "assets/web-contents/g13.webp";
+import gift14 from "assets/web-contents/g14.webp";
+import gift15 from "assets/web-contents/g15.webp";
+import gift16 from "assets/web-contents/g16.webp";
+import gift17 from "assets/web-contents/g17.webp";
+import gift18 from "assets/web-contents/g18.webp";
+import gift19 from "assets/web-contents/g19.webp";
+import gift2 from "assets/web-contents/g2.webp";
+import gift20 from "assets/web-contents/g20.webp";
+import gift21 from "assets/web-contents/g21.webp";
+import gift22 from "assets/web-contents/g22.webp";
+import gift23 from "assets/web-contents/g23.webp";
+import gift24 from "assets/web-contents/g24.webp";
+import gift25 from "assets/web-contents/g25.webp";
+import gift26 from "assets/web-contents/g26.webp";
+import gift27 from "assets/web-contents/g27.webp";
+import gift28 from "assets/web-contents/g28.webp";
+import gift29 from "assets/web-contents/g29.webp";
+import gift3 from "assets/web-contents/g3.webp";
+import gift30 from "assets/web-contents/g30.webp";
+import gift31 from "assets/web-contents/g31.webp";
+import gift32 from "assets/web-contents/g32.webp";
+import gift33 from "assets/web-contents/g33.webp";
+import gift34 from "assets/web-contents/g34.webp";
+import gift35 from "assets/web-contents/g35.webp";
+import gift4 from "assets/web-contents/g4.webp";
+import gift5 from "assets/web-contents/g5.webp";
+import gift6 from "assets/web-contents/g6.webp";
+import gift7 from "assets/web-contents/g7.webp";
+import gift8 from "assets/web-contents/g8.webp";
+import gift9 from "assets/web-contents/g9.webp";
+import ImageBtn from "components/imageBtn";
 import Layout from "components/layout";
-import { Box, Heading } from "theme-ui";
+import ModalImage from "components/modalImage";
+import { Box, Flex, Heading, Button } from "theme-ui";
+import giftHead1 from "assets/web-contents/gh1.webp";
+import giftHead2 from "assets/web-contents/gh2.webp";
+import giftHead3 from "assets/web-contents/gh3.webp";
+import { PATHS } from "theme/constant";
+
+const GiftHeader = [giftHead1, giftHead2, giftHead3];
+const GiftImages = [
+  gift1,
+  gift2,
+  gift3,
+  gift4,
+  gift5,
+  gift6,
+  gift7,
+  gift8,
+  gift9,
+  gift10,
+  gift11,
+  gift12,
+  gift13,
+  gift14,
+  gift15,
+  gift16,
+  gift17,
+  gift18,
+  gift19,
+  gift20,
+  gift21,
+  gift22,
+  gift23,
+  gift24,
+  gift25,
+  gift26,
+  gift27,
+  gift28,
+  gift29,
+  gift30,
+  gift31,
+  gift32,
+  gift33,
+  gift34,
+  gift35,
+];
+
+const scrollOptions = [
+  {
+    path: "gift-ideas",
+    label: "Gift Ideas",
+  },
+  {
+    path: "wedding-planning",
+    label: "Wedding Planning",
+  },
+];
+
+const endButton = {
+  label: "My Works",
+  path: PATHS.WORKS,
+};
 
 export default function IndexPage() {
   return (
-    <Layout>
+    <Layout scrollOptions={scrollOptions} endButton={endButton}>
       <Box sx={styles.container}>
         <Heading as="h1" sx={styles.h1}>
           Web Contents
         </Heading>
+        <Heading as="p" sx={styles.p}>
+          As a content writer, I can write up to 2 SEO English blog posts with
+          over 2000 words, including images, within a day. Moreover, I am also
+          responsible for auditing websites to optimize the search engine using
+          Screaming Frog, Google Search Console, Surferseo, Ahrefs, etc., and
+          making it user-friendly.{" "}
+        </Heading>
+        <Heading
+          as="p"
+          sx={{ ...styles.p, color: "#c89956", fontSize: "22px", mt: "40px" }}
+          id="gift-ideas"
+        >
+          GIFT IDEAS
+        </Heading>
+        <Heading as="p" sx={{ ...styles.p, color: "#877b58" }}>
+          This article about Gift Ideas is now on the 1st Google ranking and has
+          about 100 clicks in about 5000 traffics. It is now live on an
+          E-commerce website which has about 4000 clicks in about 180000
+          traffics.
+        </Heading>
+        <Heading as="p" sx={styles.caption}>
+          Statics about Oh Canvas, an E-commerce website that focusing on
+          selling artwork.
+        </Heading>
+        <Flex sx={styles.banner}>
+          <ImageBtn
+            sx={styles.bannerImg}
+            src={banner1}
+            alt="web-content-banner1"
+          />
+          <ImageBtn
+            sx={styles.bannerImg}
+            src={banner2}
+            alt="web-content-banner2"
+          />
+          <ImageBtn
+            sx={styles.bannerImg}
+            src={banner3}
+            alt="web-content-banner3"
+          />
+        </Flex>
+        <Heading as="p" sx={styles.caption}>
+          Statics about the article that generated by me.
+        </Heading>
+        {GiftHeader.map((img, idx) => (
+          <ImageBtn
+            src={img}
+            key={`gift-statistic-works-${idx}`}
+            alt={`gift-statistic-works-${idx}`}
+          />
+        ))}
+        <Flex>
+          <Button
+            sx={{ margin: "16px auto 24px" }}
+            onClick={() =>
+              window.open(
+                "https://ohcanvas.com/creative-diy-anniversary-gifts/",
+                "_blank",
+                "noopener,noreferrer"
+              )
+            }
+          >
+            Click here to see the live article
+          </Button>
+        </Flex>
+        {GiftImages.map((img, idx) => (
+          <ImageBtn
+            src={img}
+            key={`gift-works-${idx}`}
+            alt={`gift-works-${idx}`}
+          />
+        ))}
+        <Heading
+          as="p"
+          sx={{ ...styles.p, color: "#c89956", fontSize: "22px", mt: "40px" }}
+          id="wedding-planning"
+        >
+          WEDDING PLANNING
+        </Heading>
+        <Heading as="p" sx={{ ...styles.p, color: "#877b58" }}>
+          This article about Wedding Planning is on the PBN project. I am also
+          responsible for creating the keyword plan for the whole website and
+          ensuring all contents' quality including good information, internal
+          links, external links, backlinks.
+        </Heading>
+        <Flex>
+          <Button
+            sx={{ margin: "16px auto 24px" }}
+            onClick={() =>
+              window.open(
+                "https://vivaweddingphotography.com/average-price-of-a-wedding/",
+                "_blank",
+                "noopener,noreferrer"
+              )
+            }
+          >
+            Click here to see the live article
+          </Button>
+        </Flex>
       </Box>
+      <ModalImage alt="Web Content Works" />
     </Layout>
   );
 }
@@ -19,22 +218,45 @@ const styles = {
     maxWidth: 1280,
     margin: "132px auto",
   },
+  banner: {
+    flexWrap: "wrap",
+    justifyContent: "center",
+    marginBottom: "48px",
+  },
+  bannerImg: {
+    margin: "8px",
+    minWidth: 280,
+    maxWidth: 400,
+  },
   h1: {
-    color: "#012B55",
-    fontSize: "28px",
+    color: "#222",
+    fontSize: "30px",
     fontStyle: "normal",
-    fontWeight: "500",
-    marginBottom: "10px",
-    marginTop: "0px",
+    fontWeight: 600,
+    lineHeight: "34px",
+    paddingBottom: "20px",
+    paddingTop: "0px",
     textAlign: "center",
   },
   p: {
-    color: "#597188",
+    color: "#222",
     fontSize: "18px",
     fontStyle: "normal",
-    fontWeight: "500",
-    marginBottom: "10px",
-    marginTop: "0px",
+    fontWeight: 400,
+    lineHeight: "26px",
+    paddingBottom: "20px",
+    paddingTop: "0px",
     textAlign: "center",
+  },
+  caption: {
+    color: "#999",
+    fontSize: "14px",
+    fontStyle: "normal",
+    fontWeight: 400,
+    lineHeight: "18px",
+    paddingBottom: "0px",
+    paddingTop: "15px",
+    textAlign: "center",
+    margin: "24px 0 12px",
   },
 };

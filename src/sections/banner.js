@@ -56,7 +56,6 @@ const styles = {
     display: "flex",
     alignItems: "center",
     overflow: "auto",
-    backgroundImage: ["linear-gradient(-180deg, #F5F0EA 0%, #0361d015 100%)"],
     backgroundPosition: "left top",
     backgroundRepeat: "no-repeat",
     container: {

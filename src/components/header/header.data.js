@@ -26,6 +26,6 @@ export const NavigationPaths = [
   },
   {
     path: PATHS.WORKS,
-    label: "Works",
+    label: "My Works",
   },
 ];

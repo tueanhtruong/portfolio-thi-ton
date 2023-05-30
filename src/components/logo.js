@@ -34,8 +34,8 @@ export default function Logo() {
           src={logoName}
           alt="startup landing logo"
           css={{
-            height: 54,
-            width: 94,
+            height: 64,
+            width: 80,
             objectFit: "cover",
             margin: "4px auto",
             display: "block",

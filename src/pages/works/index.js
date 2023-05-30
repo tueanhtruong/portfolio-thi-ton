@@ -42,13 +42,13 @@ export default function IndexPage() {
     <Layout>
       <Box sx={styles.container}>
         <Heading as="h1" sx={styles.h1}>
-          Works
+          My Works
         </Heading>
         <Heading as="p" sx={styles.p}>
           Welcome to my page! Below are some of my recent works. Scroll down for
           more details!
         </Heading>
-        <Flex sx={{ flexWrap: "wrap" }}>
+        <Flex sx={{ flexWrap: "wrap", justifyContent: "center" }}>
           {WorkItems.map((item) => (
             <FigureImage {...item} key={`FigureImage-${item.path}`} />
           ))}
@@ -96,6 +96,7 @@ const styles = {
       overflow: "hidden",
       cursor: "pointer",
       transition: ".2s",
+      margin: "16px",
     },
     "figure > *": {
       gridArea: "1/1",

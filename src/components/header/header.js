@@ -2,13 +2,14 @@
 import { Container, Flex, jsx } from "theme-ui";
 import { Link } from "components/link";
 import Logo from "components/logo";
+import { Link as ScrollLink } from "react-scroll";
 
 import { DrawerProvider } from "contexts/drawer/drawer.provider";
 import { NavigationPaths } from "./header.data";
 import MobileDrawer from "./mobileDrawer";
 import { useRouter } from "next/router";
 
-export default function Header({ className }) {
+export default function Header({ className, endButton, scrollOptions = [] }) {
   const { pathname } = useRouter();
 
   return (
@@ -16,43 +17,43 @@ export default function Header({ className }) {
       <header sx={styles.header} className={className}>
         <Container sx={styles.container}>
           <Logo />
-
           <Flex as="nav" sx={styles.nav}>
-            {NavigationPaths.map(
-              ({ path, label }, i) => (
-                <Link
-                  path={path}
-                  label={label}
-                  sx={{
-                    ...styles.nav.navLink,
-                    ...(pathname === path ? { color: "primary" } : {}),
-                  }}
-                  key={i}
-                />
-              )
-              // <ScrollLink
-              //   activeClass="active"
-              //   sx={styles.nav.navLink}
-              //   to={path}
-              //   spy={true}
-              //   smooth={true}
-              //   offset={-100}
-              //   duration={500}
-              //   key={i}
-              // >
-              //   {label}
-              // </ScrollLink>
-            )}
+            {scrollOptions.length === 0
+              ? NavigationPaths.map(({ path, label }, i) => (
+                  <Link
+                    path={path}
+                    label={label}
+                    sx={{
+                      ...styles.nav.navLink,
+                      ...(pathname === path ? { color: "primary" } : {}),
+                    }}
+                    key={i}
+                  />
+                ))
+              : scrollOptions.map(({ path, label }, i) => (
+                  <ScrollLink
+                    activeClass="active"
+                    sx={styles.nav.navLink}
+                    to={path}
+                    spy={true}
+                    smooth={true}
+                    offset={-100}
+                    duration={1000}
+                    key={`scroll-link-${i}`}
+                  >
+                    {label}
+                  </ScrollLink>
+                ))}
           </Flex>
-
-          {/* <Link
-            path="/"
-            ml={2}
-            label="Try for Free"
-            sx={styles.headerBtn}
-            variant="buttons.primary"
-          /> */}
-
+          {endButton && (
+            <Link
+              path={endButton.path}
+              ml={2}
+              label={endButton.label}
+              sx={styles.headerBtn}
+              variant="buttons.primary"
+            />
+          )}
           <MobileDrawer pathname={pathname} />
         </Container>
       </header>
@@ -64,7 +65,7 @@ const styles = {
   headerBtn: {
     fontSize: "16px",
     fontWeight: 700,
-    backgroundColor: "#caeafc",
+    backgroundColor: "c8995630",
     display: ["none", null, null, null, "inline-block"],
   },
   header: {
