@@ -1,0 +1,37 @@
+.react-slideshow-container .default-nav {
+  height: 100%;
+  width: 64px;
+  border-radius: 0;
+  opacity: 0.6;
+  transition: 0.2s;
+}
+@media screen and (max-width: 480px) {
+  .react-slideshow-container .default-nav {
+    width: 32px;
+  }
+}
+
+.react-slideshow-container .default-nav[data-type="prev"] {
+  background: rgb(245, 240, 234);
+  background: linear-gradient(
+    130deg,
+    rgba(245, 240, 234, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.react-slideshow-container .default-nav[data-type="next"] {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    130deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(245, 240, 234, 1) 100%
+  );
+}
+
+.react-slideshow-container .default-nav:hover {
+  opacity: 1;
+}
+.indicators {
+  padding-inline-start: 0px;
+}

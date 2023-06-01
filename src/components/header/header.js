@@ -71,12 +71,12 @@ const styles = {
   header: {
     color: "text_white",
     fontWeight: "normal",
-    py: "25px",
+    py: "4px",
     width: "100%",
     position: "fixed",
     top: 0,
     left: 0,
-    backgroundColor: "transparent",
+    backgroundColor: "#F5F0EA",
     transition: "all 0.4s ease",
     "&.sticky": {
       backgroundColor: "background",
