@@ -37,8 +37,8 @@ export default function Header({ className, endButton, scrollOptions = [] }) {
                     to={path}
                     spy={true}
                     smooth={true}
-                    offset={-100}
-                    duration={1000}
+                    offset={-112}
+                    duration={800}
                     key={`scroll-link-${i}`}
                   >
                     {label}
@@ -54,7 +54,11 @@ export default function Header({ className, endButton, scrollOptions = [] }) {
               variant="buttons.primary"
             />
           )}
-          <MobileDrawer pathname={pathname} />
+          <MobileDrawer
+            pathname={pathname}
+            scrollOptions={scrollOptions}
+            endButton={endButton}
+          />
         </Container>
       </header>
     </DrawerProvider>
@@ -66,7 +70,10 @@ const styles = {
     fontSize: "16px",
     fontWeight: 700,
     backgroundColor: "c8995630",
-    display: ["none", null, null, null, "inline-block"],
+    display: "inline-block",
+    "@media screen and (max-width: 1100px)": {
+      display: "none",
+    },
   },
   header: {
     color: "text_white",
@@ -92,13 +99,13 @@ const styles = {
     "@media(max-width:1440px)": {
       maxWidth: "1230px",
     },
-    "@media screen and (max-width: 991px)": {
+    "@media screen and (max-width: 1100px)": {
       justifyContent: "space-between",
     },
   },
   nav: {
     mx: "auto",
-    "@media screen and (max-width: 991px)": {
+    "@media screen and (max-width: 1100px)": {
       display: "none",
     },
     navLink: {

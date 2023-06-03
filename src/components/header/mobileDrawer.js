@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Box } from "theme-ui";
+import { Box, Button } from "theme-ui";
 import { Scrollbars } from "react-custom-scrollbars";
 import Drawer from "components/drawer";
 import { DrawerContext } from "contexts/drawer/drawer.context";
@@ -7,11 +7,13 @@ import { IoMdClose, IoMdMenu } from "react-icons/io";
 import menuItems, { NavigationPaths } from "./header.data";
 import Logo from "components/logo";
 import LogoDark from "assets/mai-thi-logo.svg";
-// import { Link as ScrollLink } from "react-scroll";
 import { Link } from "components/link";
+import { Link as ScrollLink } from "react-scroll";
+import { useRouter } from "next/router";
 
-const MobileDrawer = ({ pathname }) => {
+const MobileDrawer = ({ pathname, scrollOptions = [], endButton }) => {
   const { state, dispatch } = useContext(DrawerContext);
+  const router = useRouter();
 
   // Toggle drawer
   const toggleHandler = React.useCallback(() => {
@@ -38,33 +40,42 @@ const MobileDrawer = ({ pathname }) => {
         <Box sx={styles.content}>
           <Logo src={LogoDark} />
           <Box sx={styles.menu}>
-            {NavigationPaths.map(({ path, label }, i) => (
-              <Link
-                path={path}
-                label={label}
-                sx={{
-                  ...styles.menu.link,
-                  ...(pathname === path ? { color: "primary" } : {}),
-                }}
-                key={i}
-              />
-              // <ScrollLink
-              //   to={path}
-              //   key={i}
-              //   spy={true}
-              //   smooth={true}
-              //   sx={styles.menu.link}
-              // >
-              //   {label}
-              // </ScrollLink>
-            ))}
+            {scrollOptions.length === 0
+              ? NavigationPaths.map(({ path, label }, i) => (
+                  <Link
+                    path={path}
+                    label={label}
+                    sx={{
+                      ...styles.menu.link,
+                      ...(pathname === path ? { color: "primary" } : {}),
+                    }}
+                    key={i}
+                  />
+                ))
+              : scrollOptions.map(({ path, label }, i) => (
+                  <ScrollLink
+                    activeClass="active"
+                    style={styles.menu.link}
+                    to={path}
+                    spy={true}
+                    smooth={true}
+                    key={`mobile-scroll-link-${i}`}
+                  >
+                    {label}
+                  </ScrollLink>
+                ))}
           </Box>
-
-          {/* <Box sx={styles.menuFooter}>
-            <Button variant="primary" sx={styles.button}>
-              Try for Free
-            </Button>
-          </Box> */}
+          {endButton && (
+            <Box sx={styles.menuFooter}>
+              <Button
+                variant="primary"
+                sx={styles.button}
+                onClick={() => router.push(endButton.path)}
+              >
+                {endButton.label}
+              </Button>
+            </Box>
+          )}
         </Box>
       </Scrollbars>
     </Drawer>
@@ -79,7 +90,7 @@ const styles = {
     flexShrink: "0",
     width: "26px",
 
-    "@media screen and (min-width: 992px)": {
+    "@media screen and (min-width: 1101px)": {
       display: "none",
     },
   },
@@ -124,6 +135,9 @@ const styles = {
       marginTop: 16,
       cursor: "pointer",
     },
+    "a:hover, a.active": {
+      color: "#c89956 !important",
+    },
   },
 
   menuFooter: {
@@ -145,8 +159,6 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     py: "0",
-    backgroundColor: "#02073E",
-    color: "#fff",
   },
 };
 

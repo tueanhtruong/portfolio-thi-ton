@@ -6,7 +6,7 @@ import BannerImage from "assets/banner-image-1.webp";
 import { useRouter } from "next/router";
 
 const Banner = () => {
-  const route = useRouter();
+  const router = useRouter();
   return (
     <Box id="banner" sx={styles.banner}>
       <Flex sx={styles.banner.row}>
@@ -35,7 +35,7 @@ const Banner = () => {
                 <FaMailBulk size={20} color="#000000" />
               </a>
             </Box>
-            <Button onClick={() => route.push("/works")} sx={{ mt: 4 }}>
+            <Button onClick={() => router.push("/works")} sx={{ mt: 4 }}>
               See more about my works
             </Button>
           </Box>

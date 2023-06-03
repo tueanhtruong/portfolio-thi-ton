@@ -36,6 +36,7 @@ import gift6 from "assets/web-contents/g6.webp";
 import gift7 from "assets/web-contents/g7.webp";
 import gift8 from "assets/web-contents/g8.webp";
 import gift9 from "assets/web-contents/g9.webp";
+
 import ImageBtn from "components/imageBtn";
 import Layout from "components/layout";
 import ModalImage from "components/modalImage";
@@ -45,6 +46,7 @@ import giftHead2 from "assets/web-contents/gh2.webp";
 import giftHead3 from "assets/web-contents/gh3.webp";
 import { PATHS } from "theme/constant";
 import { Slide } from "react-slideshow-image";
+
 import wedding1 from "assets/wedding/w1.webp";
 import wedding2 from "assets/wedding/w2.webp";
 import wedding3 from "assets/wedding/w3.webp";
@@ -59,6 +61,7 @@ import wedding11 from "assets/wedding/w11.webp";
 import wedding12 from "assets/wedding/w12.webp";
 import wedding13 from "assets/wedding/w13.webp";
 import wedding14 from "assets/wedding/w14.webp";
+
 import pet1 from "assets/pets/p1.webp";
 import pet2 from "assets/pets/p2.webp";
 import pet3 from "assets/pets/p3.webp";
@@ -76,6 +79,75 @@ import pet14 from "assets/pets/p14.webp";
 import pet15 from "assets/pets/p15.webp";
 import pet16 from "assets/pets/p16.webp";
 import pet17 from "assets/pets/p17.webp";
+
+import home1 from "assets/home-decor/h1.webp";
+import home2 from "assets/home-decor/h2.webp";
+import home3 from "assets/home-decor/h3.webp";
+import home4 from "assets/home-decor/h4.webp";
+import home5 from "assets/home-decor/h5.webp";
+import home6 from "assets/home-decor/h6.webp";
+import home7 from "assets/home-decor/h7.webp";
+import home8 from "assets/home-decor/h8.webp";
+import home9 from "assets/home-decor/h9.webp";
+import home10 from "assets/home-decor/h10.webp";
+import home11 from "assets/home-decor/h11.webp";
+import home12 from "assets/home-decor/h12.webp";
+import home13 from "assets/home-decor/h13.webp";
+import home14 from "assets/home-decor/h14.webp";
+import home15 from "assets/home-decor/h15.webp";
+import home16 from "assets/home-decor/h16.webp";
+import home17 from "assets/home-decor/h17.webp";
+import home18 from "assets/home-decor/h18.webp";
+import home19 from "assets/home-decor/h19.webp";
+import home20 from "assets/home-decor/h20.webp";
+import home21 from "assets/home-decor/h21.webp";
+import home22 from "assets/home-decor/h22.webp";
+import home23 from "assets/home-decor/h23.webp";
+import home24 from "assets/home-decor/h24.webp";
+
+import finance1 from "assets/finance/f1.webp";
+import finance2 from "assets/finance/f2.webp";
+import finance3 from "assets/finance/f3.webp";
+import finance4 from "assets/finance/f4.webp";
+import finance5 from "assets/finance/f5.webp";
+
+import product1 from "assets/product-review/p1.webp";
+import product2 from "assets/product-review/p2.webp";
+import product3 from "assets/product-review/p3.webp";
+import product4 from "assets/product-review/p4.webp";
+
+import fashion1 from "assets/fashion/fa1.webp";
+import fashion2 from "assets/fashion/fa2.webp";
+import fashion3 from "assets/fashion/fa3.webp";
+import fashion4 from "assets/fashion/fa4.webp";
+import fashion5 from "assets/fashion/fa5.webp";
+import fashion6 from "assets/fashion/fa6.webp";
+import fashion7 from "assets/fashion/fa7.webp";
+import fashion8 from "assets/fashion/fa8.webp";
+import fashion9 from "assets/fashion/fa9.webp";
+import fashion10 from "assets/fashion/fa10.webp";
+import fashion11 from "assets/fashion/fa11.webp";
+
+import keyWord from "assets/key-word.webp";
+import emailMarketing from "assets/email-marketing.webp";
+import { FigureImage } from ".";
+
+const OtherWorkItems = [
+  {
+    src: keyWord,
+    title: "Keyword Research",
+    year: "2023",
+    path: PATHS.KEYWORD_RESEARCH,
+    blackTheme: true,
+  },
+  {
+    src: emailMarketing,
+    title: "Email Marketing",
+    year: "2023",
+    path: PATHS.EMAIL_MARKETING,
+    blackTheme: true,
+  },
+];
 
 const GiftHeader = [giftHead1, giftHead2, giftHead3];
 const GiftImages = [
@@ -153,6 +225,49 @@ const PetImages = [
   pet17,
 ];
 
+const FinanceImages = [finance1, finance2, finance3, finance4, finance5];
+const ProductImages = [product1, product2, product3, product4];
+const FashionImages = [
+  fashion1,
+  fashion2,
+  fashion3,
+  fashion4,
+  fashion5,
+  fashion6,
+  fashion7,
+  fashion8,
+  fashion9,
+  fashion10,
+  fashion11,
+];
+
+const HomeImages = [
+  home1,
+  home2,
+  home3,
+  home4,
+  home5,
+  home6,
+  home7,
+  home8,
+  home9,
+  home10,
+  home11,
+  home12,
+  home13,
+  home14,
+  home15,
+  home16,
+  home17,
+  home18,
+  home19,
+  home20,
+  home21,
+  home22,
+  home23,
+  home24,
+];
+
 const scrollOptions = [
   {
     path: "gift-ideas",
@@ -166,6 +281,22 @@ const scrollOptions = [
     path: "pets",
     label: "Pets",
   },
+  {
+    path: "home-decor",
+    label: "Home Decor",
+  },
+  {
+    path: "finance",
+    label: "Finance",
+  },
+  {
+    path: "product-review",
+    label: "Product Review",
+  },
+  {
+    path: "fashion",
+    label: "Fashion",
+  },
 ];
 
 const endButton = {
@@ -173,7 +304,7 @@ const endButton = {
   path: PATHS.WORKS,
 };
 
-const responsiveSettings = [
+export const responsiveSettings = [
   {
     breakpoint: 1200,
     settings: {
@@ -200,205 +331,409 @@ const responsiveSettings = [
 export default function IndexPage() {
   return (
     <Layout scrollOptions={scrollOptions} endButton={endButton}>
-      <Box sx={styles.container}>
-        <Heading as="h1" sx={styles.h1}>
+      <Box sx={commonStyles.container}>
+        <Heading as="h1" sx={commonStyles.h1}>
           Web Contents
         </Heading>
-        <Heading as="p" sx={styles.p}>
+        <Heading as="p" sx={commonStyles.p}>
           As a content writer, I can write up to 2 SEO English blog posts with
           over 2000 words, including images, within a day. Moreover, I am also
           responsible for auditing websites to optimize the search engine using
           Screaming Frog, Google Search Console, Surferseo, Ahrefs, etc., and
           making it user-friendly.{" "}
         </Heading>
-        <Heading
-          as="p"
-          sx={{ ...styles.p, color: "#c89956", fontSize: "22px", mt: "40px" }}
-          id="gift-ideas"
-        >
-          GIFT IDEAS
-        </Heading>
-        <Heading as="p" sx={{ ...styles.p, color: "#877b58" }}>
-          This article about Gift Ideas is now on the 1st Google ranking and has
-          about 100 clicks in about 5000 traffics. It is now live on an
-          E-commerce website which has about 4000 clicks in about 180000
-          traffics.
-        </Heading>
-        <Heading as="p" sx={styles.caption}>
-          Statics about Oh Canvas, an E-commerce website that focusing on
-          selling artwork.
-        </Heading>
-        <Flex sx={styles.banner}>
-          <ImageBtn
-            sx={styles.bannerImg}
-            src={banner1}
-            alt="web-content-banner1"
-          />
-          <ImageBtn
-            sx={styles.bannerImg}
-            src={banner2}
-            alt="web-content-banner2"
-          />
-          <ImageBtn
-            sx={styles.bannerImg}
-            src={banner3}
-            alt="web-content-banner3"
-          />
-        </Flex>
-        <Heading as="p" sx={styles.caption}>
-          Statics about the article that generated by me.
-        </Heading>
-        <Slide
-          indicators={true}
-          duration={5000}
-          transitionDuration={500}
-          autoplay={false}
-        >
-          {GiftHeader.map((img, idx) => (
-            <Box sx={styles.slideImg} key={`gift-statistic-works-${idx}`}>
-              <ImageBtn
-                sx={{ height: 580 }}
-                src={img}
-                alt={`gift-statistic-works-${idx}`}
-              />
-            </Box>
-          ))}
-        </Slide>
-        <Flex>
-          <Button
-            sx={{ margin: "16px auto 24px" }}
-            onClick={() =>
-              window.open(
-                "https://ohcanvas.com/creative-diy-anniversary-gifts/",
-                "_blank",
-                "noopener,noreferrer"
-              )
-            }
+        {/* ////////////////////////// GIFT IDEAS ////////////////////////// */}
+        <Box id="gift-ideas">
+          <Heading
+            as="p"
+            sx={{
+              ...commonStyles.p,
+              color: "#c89956",
+              fontSize: "22px",
+              mt: "40px",
+            }}
           >
-            Click here to see the live article
-          </Button>
-        </Flex>
-        <Slide
-          indicators={true}
-          duration={5000}
-          transitionDuration={500}
-          autoplay={false}
-          slidesToScroll={3}
-          slidesToShow={3}
-          responsive={responsiveSettings}
-        >
-          {GiftImages.map((img, idx) => (
-            <Box sx={styles.slideImg} key={`gift-works-${idx}`}>
-              <ImageBtn
-                sx={{ height: 580 }}
-                src={img}
-                alt={`gift-works-${idx}`}
-              />
-            </Box>
-          ))}
-        </Slide>
-        <Heading
-          as="p"
-          sx={{ ...styles.p, color: "#c89956", fontSize: "22px", mt: "40px" }}
-          id="wedding-planning"
-        >
-          WEDDING PLANNING
-        </Heading>
-        <Heading as="p" sx={{ ...styles.p, color: "#877b58" }}>
-          This article about Wedding Planning is on the PBN project. I am also
-          responsible for creating the keyword plan for the whole website and
-          ensuring all contents' quality including good information, internal
-          links, external links, backlinks.
-        </Heading>
-        <Flex>
-          <Button
-            sx={{ margin: "16px auto 24px" }}
-            onClick={() =>
-              window.open(
-                "https://vivaweddingphotography.com/average-price-of-a-wedding/",
-                "_blank",
-                "noopener,noreferrer"
-              )
-            }
+            GIFT IDEAS
+          </Heading>
+          <Heading as="p" sx={{ ...commonStyles.p, color: "#877b58" }}>
+            This article about Gift Ideas is now on the 1st Google ranking and
+            has about 100 clicks in about 5000 traffics. It is now live on an
+            E-commerce website which has about 4000 clicks in about 180000
+            traffics.
+          </Heading>
+          <Heading as="p" sx={commonStyles.caption}>
+            Statics about Oh Canvas, an E-commerce website that focusing on
+            selling artwork.
+          </Heading>
+          <Flex sx={commonStyles.banner}>
+            <ImageBtn
+              sx={commonStyles.bannerImg}
+              src={banner1}
+              alt="web-content-banner1"
+            />
+            <ImageBtn
+              sx={commonStyles.bannerImg}
+              src={banner2}
+              alt="web-content-banner2"
+            />
+            <ImageBtn
+              sx={commonStyles.bannerImg}
+              src={banner3}
+              alt="web-content-banner3"
+            />
+          </Flex>
+          <Heading as="p" sx={commonStyles.caption}>
+            Statics about the article that generated by me.
+          </Heading>
+          <Slide
+            indicators={true}
+            duration={5000}
+            transitionDuration={500}
+            autoplay={false}
           >
-            Click here to see the live article
-          </Button>
-        </Flex>
-        <Slide
-          indicators={true}
-          duration={5000}
-          transitionDuration={500}
-          autoplay={false}
-          slidesToScroll={3}
-          slidesToShow={3}
-          responsive={responsiveSettings}
-        >
-          {WeddingImages.map((img, idx) => (
-            <Box sx={styles.slideImg} key={`gift-works-${idx}`}>
-              <ImageBtn
-                sx={{ height: 580 }}
-                src={img}
-                alt={`gift-works-${idx}`}
-              />
-            </Box>
-          ))}
-        </Slide>
-        <Heading
-          as="p"
-          sx={{ ...styles.p, color: "#c89956", fontSize: "22px", mt: "40px" }}
-          id="pets"
-        >
-          PETS
-        </Heading>
-        <Heading as="p" sx={{ ...styles.p, color: "#877b58" }}>
-          This article is about Pets. On this website, I am responsible for
-          creating content, ensuring the quality of the content and keyword
-          plan, make the website friendly to users and Google bots.
-        </Heading>
-        <Flex>
-          <Button
-            sx={{ margin: "16px auto 24px" }}
-            onClick={() =>
-              window.open(
-                "https://blog.canvaspersonalized.com/lynx-point-siamese/",
-                "_blank",
-                "noopener,noreferrer"
-              )
-            }
+            {GiftHeader.map((img, idx) => (
+              <Box
+                sx={commonStyles.slideImg}
+                key={`gift-statistic-works-${idx}`}
+              >
+                <ImageBtn
+                  sx={{ height: 580, objectFit: "cover" }}
+                  src={img}
+                  alt={`gift-statistic-works-${idx}`}
+                />
+              </Box>
+            ))}
+          </Slide>
+          <Flex>
+            <Button
+              sx={{ margin: "16px auto 24px" }}
+              onClick={() =>
+                window.open(
+                  "https://ohcanvas.com/creative-diy-anniversary-gifts/",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
+              Click here to see the live article
+            </Button>
+          </Flex>
+          <Slide
+            indicators={true}
+            duration={5000}
+            transitionDuration={500}
+            autoplay={false}
+            slidesToScroll={3}
+            slidesToShow={3}
+            responsive={responsiveSettings}
           >
-            Click here to see the live article
-          </Button>
-        </Flex>
-        <Slide
-          indicators={true}
-          duration={5000}
-          transitionDuration={500}
-          autoplay={false}
-          slidesToScroll={3}
-          slidesToShow={3}
-          responsive={responsiveSettings}
+            {GiftImages.map((img, idx) => (
+              <Box sx={commonStyles.slideImg} key={`gift-works-${idx}`}>
+                <ImageBtn
+                  sx={{ height: 580 }}
+                  src={img}
+                  alt={`gift-works-${idx}`}
+                />
+              </Box>
+            ))}
+          </Slide>
+        </Box>
+        {/* ////////////////////////// WEDDING PLANNING ////////////////////////// */}{" "}
+        <Box id="wedding-planning">
+          <Heading
+            as="p"
+            sx={{
+              ...commonStyles.p,
+              color: "#c89956",
+              fontSize: "22px",
+              mt: "40px",
+            }}
+            id="wedding-planning"
+          >
+            WEDDING PLANNING
+          </Heading>
+          <Heading as="p" sx={{ ...commonStyles.p, color: "#877b58" }}>
+            This article about Wedding Planning is on the PBN project. I am also
+            responsible for creating the keyword plan for the whole website and
+            ensuring all contents' quality including good information, internal
+            links, external links, backlinks.
+          </Heading>
+          <Flex>
+            <Button
+              sx={{ margin: "16px auto 24px" }}
+              onClick={() =>
+                window.open(
+                  "https://vivaweddingphotography.com/average-price-of-a-wedding/",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
+              Click here to see the live article
+            </Button>
+          </Flex>
+          <Slide
+            indicators={true}
+            duration={5000}
+            transitionDuration={500}
+            autoplay={false}
+            slidesToScroll={3}
+            slidesToShow={3}
+            responsive={responsiveSettings}
+          >
+            {WeddingImages.map((img, idx) => (
+              <Box sx={commonStyles.slideImg} key={`wedding-works-${idx}`}>
+                <ImageBtn
+                  sx={{ height: 580 }}
+                  src={img}
+                  alt={`wedding-works-${idx}`}
+                />
+              </Box>
+            ))}
+          </Slide>
+        </Box>
+        {/* ////////////////////////// PETS ////////////////////////// */}
+        <Box id="pets">
+          <Heading
+            as="p"
+            sx={{
+              ...commonStyles.p,
+              color: "#c89956",
+              fontSize: "22px",
+              mt: "40px",
+            }}
+            id="pets"
+          >
+            PETS
+          </Heading>
+          <Heading as="p" sx={{ ...commonStyles.p, color: "#877b58" }}>
+            This article is about Pets. On this website, I am responsible for
+            creating content, ensuring the quality of the content and keyword
+            plan, make the website friendly to users and Google bots.
+          </Heading>
+          <Flex>
+            <Button
+              sx={{ margin: "16px auto 24px" }}
+              onClick={() =>
+                window.open(
+                  "https://blog.canvaspersonalized.com/lynx-point-siamese/",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
+              Click here to see the live article
+            </Button>
+          </Flex>
+          <Slide
+            indicators={true}
+            duration={5000}
+            transitionDuration={500}
+            autoplay={false}
+            slidesToScroll={3}
+            slidesToShow={3}
+            responsive={responsiveSettings}
+          >
+            {PetImages.map((img, idx) => (
+              <Box sx={commonStyles.slideImg} key={`pet-works-${idx}`}>
+                <ImageBtn
+                  sx={{ height: 580 }}
+                  src={img}
+                  alt={`pet-works-${idx}`}
+                />
+              </Box>
+            ))}
+          </Slide>
+        </Box>
+        {/* ////////////////////////// HOME DECOR ////////////////////////// */}
+        <Box id="home-decor">
+          <Heading
+            as="p"
+            sx={{
+              ...commonStyles.p,
+              color: "#c89956",
+              fontSize: "22px",
+              mt: "40px",
+            }}
+            id="home-decor"
+          >
+            HOME DECOR
+          </Heading>
+          <Heading as="p" sx={{ ...commonStyles.p, color: "#877b58" }}>
+            This article about Home decor is the one that I generated during my
+            internship time.
+          </Heading>
+          <Flex>
+            <Button
+              sx={{ margin: "16px auto 24px" }}
+              onClick={() =>
+                window.open(
+                  "https://farmhouserooms.com/wonderful-farmhouse-dining-room-rugs.html",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
+              Click here to see the live article
+            </Button>
+          </Flex>
+          <Slide
+            indicators={true}
+            duration={5000}
+            transitionDuration={500}
+            autoplay={false}
+            slidesToScroll={3}
+            slidesToShow={3}
+            responsive={responsiveSettings}
+          >
+            {HomeImages.map((img, idx) => (
+              <Box sx={commonStyles.slideImg} key={`home-decor-works-${idx}`}>
+                <ImageBtn
+                  sx={{ height: 580 }}
+                  src={img}
+                  alt={`home-decor-works-${idx}`}
+                />
+              </Box>
+            ))}
+          </Slide>
+        </Box>
+        {/* ////////////////////////// FINANCE ////////////////////////// */}
+        <Box id="finance">
+          <Heading
+            as="p"
+            sx={{
+              ...commonStyles.p,
+              color: "#c89956",
+              fontSize: "22px",
+              mt: "40px",
+            }}
+          >
+            FINANCE
+          </Heading>
+          <Heading as="p" sx={{ ...commonStyles.p, color: "#877b58" }}>
+            This article which is about Finance, is in a freelance project. As a
+            result, I do not have the live URL. However, I saved all my
+            freelance works on my laptop so I will show them via these PNG files
+            below.
+          </Heading>
+          <Slide
+            indicators={true}
+            duration={5000}
+            transitionDuration={500}
+            autoplay={false}
+            slidesToScroll={3}
+            slidesToShow={3}
+            responsive={responsiveSettings}
+          >
+            {FinanceImages.map((img, idx) => (
+              <Box sx={commonStyles.slideImg} key={`finance-works-${idx}`}>
+                <ImageBtn
+                  sx={{ height: 580 }}
+                  src={img}
+                  alt={`finance-works-${idx}`}
+                />
+              </Box>
+            ))}
+          </Slide>
+        </Box>
+        {/* ////////////////////////// PRODUCT REVIEW ////////////////////////// */}
+        <Box id="product-review">
+          <Heading
+            as="p"
+            sx={{
+              ...commonStyles.p,
+              color: "#c89956",
+              fontSize: "22px",
+              mt: "40px",
+            }}
+          >
+            PRODUCT REVIEW
+          </Heading>
+          <Heading as="p" sx={{ ...commonStyles.p, color: "#877b58" }}>
+            Another freelance work is about product review.
+          </Heading>
+          <Slide
+            indicators={true}
+            duration={5000}
+            transitionDuration={500}
+            autoplay={false}
+            slidesToScroll={3}
+            slidesToShow={3}
+            responsive={responsiveSettings}
+          >
+            {ProductImages.map((img, idx) => (
+              <Box
+                sx={commonStyles.slideImg}
+                key={`product-review-works-${idx}`}
+              >
+                <ImageBtn
+                  sx={{ height: 580 }}
+                  src={img}
+                  alt={`product-review-works-${idx}`}
+                />
+              </Box>
+            ))}
+          </Slide>
+        </Box>
+        {/* ////////////////////////// FASHION ////////////////////////// */}
+        <Box id="fashion">
+          <Heading
+            as="p"
+            sx={{
+              ...commonStyles.p,
+              color: "#c89956",
+              fontSize: "22px",
+              mt: "40px",
+            }}
+          >
+            FASHION
+          </Heading>
+          <Heading as="p" sx={{ ...commonStyles.p, color: "#877b58" }}>
+            Another freelance content writing job is about Fashion.
+          </Heading>
+          <Slide
+            indicators={true}
+            duration={5000}
+            transitionDuration={500}
+            autoplay={false}
+            slidesToScroll={3}
+            slidesToShow={3}
+            responsive={responsiveSettings}
+          >
+            {FashionImages.map((img, idx) => (
+              <Box sx={commonStyles.slideImg} key={`fashion-works-${idx}`}>
+                <ImageBtn
+                  sx={{ height: 580 }}
+                  src={img}
+                  alt={`fashion-works-${idx}`}
+                />
+              </Box>
+            ))}
+          </Slide>
+        </Box>
+        <Heading
+          as="h3"
+          sx={{ ...commonStyles.p, fontSize: "22px", mt: "40px" }}
+          id="fashion"
         >
-          {PetImages.map((img, idx) => (
-            <Box sx={styles.slideImg} key={`gift-works-${idx}`}>
-              <ImageBtn
-                sx={{ height: 580 }}
-                src={img}
-                alt={`gift-works-${idx}`}
-              />
-            </Box>
+          You may also like
+        </Heading>
+        <Flex sx={{ flexWrap: "wrap", justifyContent: "center" }}>
+          {OtherWorkItems.map((item) => (
+            <FigureImage {...item} key={`FigureImage-${item.path}`} />
           ))}
-        </Slide>
+        </Flex>
       </Box>
       <ModalImage alt="Web Content Works" />
     </Layout>
   );
 }
 
-const styles = {
+export const commonStyles = {
   container: {
     padding: "16px",
     maxWidth: 1280,
-    margin: "132px auto",
+    margin: "132px auto 32px",
   },
   banner: {
     flexWrap: "wrap",

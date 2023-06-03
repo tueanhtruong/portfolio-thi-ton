@@ -52,14 +52,13 @@ export default function IndexPage() {
           {WorkItems.map((item) => (
             <FigureImage {...item} key={`FigureImage-${item.path}`} />
           ))}
-          {/* <FigureImage src={webContent} /> */}
         </Flex>
       </Box>
     </Layout>
   );
 }
 
-const FigureImage = ({
+export const FigureImage = ({
   src,
   title = "The Content",
   year = "2023",
@@ -104,7 +103,7 @@ const styles = {
     },
     "figure figcaption": {
       // "--c": "#fff",
-      "--_i": ["0%", null, null, "100%"],
+      // "--_i": ["0%", null, null, "100%"],
       display: "flex",
       flexDirection: "column",
       textAlign: "center",
@@ -114,11 +113,14 @@ const styles = {
       fontWeight: "bold",
       color: "#0000",
       padding: ".75rem",
-      background: "var(--c,#0009)",
-      clipPath: "inset(32px var(--_i,100%) 32px 0)",
-      "-webkit-mask": "linear-gradient(#000 0 0), linear-gradient(#000 0 0)",
-      "-webkit-mask-composite": "xor",
-      "-webkit-mask-clip": "text, padding-box",
+      zIndex: 2,
+      margin: "32px 32px",
+
+      // background: "var(--c,#0009)",
+      // clipPath: "inset(32px var(--_i,100%) 32px 0)",
+      // "-webkit-mask": "linear-gradient(#000 0 0), linear-gradient(#000 0 0)",
+      // "-webkit-mask-composite": "xor",
+      // "-webkit-mask-clip": "text, padding-box",
       span: {
         fontSize: "1.5rem",
       },
@@ -126,19 +128,24 @@ const styles = {
         lineHeight: "3rem",
       },
     },
-    "figure:hover figcaption": { "--_i": "0%" },
+    "figure:hover figcaption": {
+      // "--_i": "0%",
+      margin: "64px 0",
+      background: "#fff",
+      color: "#012B55",
+    },
     "figure:hover img": {
       transform: "scale(1.2)",
     },
     "figure:hover": {
       boxShadow: "0px 25px 100px rgba(69, 88, 157, 0.6)",
     },
-    "@supports not (-webkit-mask-clip: text)": {
-      "figure figcaption": {
-        "-webkit-mask": "none",
-        color: "#fff",
-      },
-    },
+    // "@supports not (-webkit-mask-clip: text)": {
+    //   "figure figcaption": {
+    //     "-webkit-mask": "none",
+    //     color: "#fff",
+    //   },
+    // },
   },
   container: {
     padding: "16px",
