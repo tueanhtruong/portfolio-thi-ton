@@ -26,7 +26,6 @@ export default function IndexPage() {
             ...commonStyles.p,
             marginBottom: "8px",
             textAlign: "left",
-            mx: 80,
           }}
         >
           I have around 3 years of experience in content writing about gifts,
@@ -39,7 +38,6 @@ export default function IndexPage() {
             ...commonStyles.p,
             marginBottom: "8px",
             textAlign: "left",
-            mx: 80,
           }}
         >
           In addition, I also have experience in ranking keywords on the first
@@ -54,7 +52,6 @@ export default function IndexPage() {
             ...commonStyles.p,
             marginBottom: "8px",
             textAlign: "left",
-            mx: 80,
           }}
         >
           I love to invest my time profoundly and understand the Marketing

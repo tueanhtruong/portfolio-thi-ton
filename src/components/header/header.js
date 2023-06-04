@@ -37,7 +37,7 @@ export default function Header({ className, endButton, scrollOptions = [] }) {
                     to={path}
                     spy={true}
                     smooth={true}
-                    offset={-112}
+                    offset={-16}
                     duration={800}
                     key={`scroll-link-${i}`}
                   >

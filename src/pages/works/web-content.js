@@ -268,7 +268,7 @@ const HomeImages = [
   home24,
 ];
 
-const scrollOptions = [
+export const webContentScrollOptions = [
   {
     path: "gift-ideas",
     label: "Gift Ideas",
@@ -330,7 +330,7 @@ export const responsiveSettings = [
 
 export default function IndexPage() {
   return (
-    <Layout scrollOptions={scrollOptions} endButton={endButton}>
+    <Layout scrollOptions={webContentScrollOptions} endButton={endButton}>
       <Box sx={commonStyles.container}>
         <Heading as="h1" sx={commonStyles.h1}>
           Web Contents
@@ -343,7 +343,7 @@ export default function IndexPage() {
           making it user-friendly.{" "}
         </Heading>
         {/* ////////////////////////// GIFT IDEAS ////////////////////////// */}
-        <Box id="gift-ideas">
+        <Box id="gift-ideas" sx={{ paddingTop: 80, marginTop: -80 }}>
           <Heading
             as="p"
             sx={{
@@ -439,7 +439,7 @@ export default function IndexPage() {
           </Slide>
         </Box>
         {/* ////////////////////////// WEDDING PLANNING ////////////////////////// */}{" "}
-        <Box id="wedding-planning">
+        <Box sx={{ paddingTop: 80, marginTop: -80 }} id="wedding-planning">
           <Heading
             as="p"
             sx={{
@@ -493,7 +493,7 @@ export default function IndexPage() {
           </Slide>
         </Box>
         {/* ////////////////////////// PETS ////////////////////////// */}
-        <Box id="pets">
+        <Box sx={{ paddingTop: 80, marginTop: -80 }} id="pets">
           <Heading
             as="p"
             sx={{
@@ -546,7 +546,7 @@ export default function IndexPage() {
           </Slide>
         </Box>
         {/* ////////////////////////// HOME DECOR ////////////////////////// */}
-        <Box id="home-decor">
+        <Box sx={{ paddingTop: 80, marginTop: -80 }} id="home-decor">
           <Heading
             as="p"
             sx={{
@@ -598,7 +598,7 @@ export default function IndexPage() {
           </Slide>
         </Box>
         {/* ////////////////////////// FINANCE ////////////////////////// */}
-        <Box id="finance">
+        <Box sx={{ paddingTop: 80, marginTop: -80 }} id="finance">
           <Heading
             as="p"
             sx={{
@@ -637,7 +637,7 @@ export default function IndexPage() {
           </Slide>
         </Box>
         {/* ////////////////////////// PRODUCT REVIEW ////////////////////////// */}
-        <Box id="product-review">
+        <Box sx={{ paddingTop: 80, marginTop: -80 }} id="product-review">
           <Heading
             as="p"
             sx={{
@@ -676,7 +676,7 @@ export default function IndexPage() {
           </Slide>
         </Box>
         {/* ////////////////////////// FASHION ////////////////////////// */}
-        <Box id="fashion">
+        <Box sx={{ paddingTop: 80, marginTop: -80 }} id="fashion">
           <Heading
             as="p"
             sx={{
