@@ -1,7 +1,7 @@
 import ImageBtn from "components/imageBtn";
 import Layout from "components/layout";
 import ModalImage from "components/modalImage";
-import { Box, Flex, Heading } from "theme-ui";
+import { Box, Flex, Heading, Button } from "theme-ui";
 import { PATHS } from "theme/constant";
 
 import social1 from "assets/social-content/s1.webp";
@@ -57,7 +57,20 @@ export default function IndexPage() {
           finding sponsors, contacting guests and special guests, and setting up
           the event.
         </Heading>
-
+        <Flex>
+          <Button
+            sx={{ margin: "16px auto 24px" }}
+            onClick={() =>
+              window.open(
+                "https://fb.me/e/157nBFoXg",
+                "_blank",
+                "noopener,noreferrer"
+              )
+            }
+          >
+            Click here to see the live campaign
+          </Button>
+        </Flex>
         {SocialImages.map((img, idx) => (
           <ImageBtn
             sx={{ width: "100%" }}

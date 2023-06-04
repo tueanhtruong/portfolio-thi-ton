@@ -28,4 +28,8 @@ export const NavigationPaths = [
     path: PATHS.WORKS,
     label: "My Works",
   },
+  {
+    path: PATHS.RESUME,
+    label: "Resume",
+  },
 ];
