@@ -45,7 +45,7 @@ export default function IndexPage() {
   return (
     <Layout scrollOptions={scrollOptions} endButton={endButton}>
       <Box
-        sx={{ ...commonStyles.container, paddingTop: 80, marginTop: -80 }}
+        sx={{ ...commonStyles.container, paddingTop: 80, marginTop: 60 }}
         id="email-marketing"
       >
         <Heading as="h1" sx={commonStyles.h1}>
