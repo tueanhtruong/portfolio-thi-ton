@@ -47,7 +47,6 @@ export default function SEO({
       {metaData.map(({ name, content }, i) => (
         <meta key={i} name={name} content={content} />
       ))}
-      <link rel="canonical" href="https://tue-truong-profile.vercel.app/" />
     </Head>
   );
 }

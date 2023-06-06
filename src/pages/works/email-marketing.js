@@ -44,7 +44,10 @@ const endButton = {
 export default function IndexPage() {
   return (
     <Layout scrollOptions={scrollOptions} endButton={endButton}>
-      <Box sx={commonStyles.container} id="email-marketing">
+      <Box
+        sx={{ ...commonStyles.container, paddingTop: 80, marginTop: -80 }}
+        id="email-marketing"
+      >
         <Heading as="h1" sx={commonStyles.h1}>
           Email Marketing
         </Heading>

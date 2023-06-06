@@ -69,7 +69,10 @@ const endButton = {
 export default function IndexPage() {
   return (
     <Layout scrollOptions={scrollOptions} endButton={endButton}>
-      <Box sx={commonStyles.container} id="keyword-research">
+      <Box
+        sx={{ ...commonStyles.container, paddingTop: 80, marginTop: -80 }}
+        id="keyword-research"
+      >
         <Heading as="h1" sx={commonStyles.h1}>
           Keyword Research
         </Heading>

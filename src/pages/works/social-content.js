@@ -47,7 +47,10 @@ const endButton = {
 export default function IndexPage() {
   return (
     <Layout scrollOptions={scrollOptions} endButton={endButton}>
-      <Box sx={commonStyles.container} id="social-content">
+      <Box
+        sx={{ ...commonStyles.container, paddingTop: 80, marginTop: -80 }}
+        id="social-content"
+      >
         <Heading as="h1" sx={commonStyles.h1}>
           Social Content
         </Heading>
