@@ -335,7 +335,7 @@ export default function IndexPage() {
       <Head>
         <link
           rel="canonical"
-          href="https://portfolio-thi-ton.vercel.app/web-content"
+          href="https://portfolio-thi-ton.vercel.app/works/web-content"
         />
       </Head>
       <Layout scrollOptions={webContentScrollOptions} endButton={endButton}>
