@@ -32,6 +32,11 @@ const OtherWorkItems = [
 
 const SocialImages = [social1, social2, social3];
 
+const socialImagesUrls = SocialImages.map((u, idx) => ({
+  url: u,
+  title: `Social content ${idx + 1}`,
+}));
+
 const scrollOptions = [
   {
     path: "social-content",
@@ -79,6 +84,8 @@ export default function IndexPage() {
             sx={{ width: "100%" }}
             src={img}
             alt={`social-works-${idx}`}
+            startIndex={idx}
+            urls={socialImagesUrls}
           />
         ))}
         <Heading

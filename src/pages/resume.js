@@ -12,6 +12,11 @@ import { useRouter } from "next/router";
 
 const ResumeImages = [resume1, resume2];
 
+const resumeImagesUrls = ResumeImages.map((u, idx) => ({
+  url: u,
+  title: `Resume ${idx + 1}`,
+}));
+
 export default function IndexPage() {
   const router = useRouter();
   return (
@@ -60,7 +65,13 @@ export default function IndexPage() {
         </Heading>
 
         {ResumeImages.map((img, idx) => (
-          <ImageBtn sx={{ width: "100%" }} src={img} alt={`resume-${idx}`} />
+          <ImageBtn
+            sx={{ width: "100%" }}
+            src={img}
+            alt={`resume-${idx}`}
+            startIndex={idx}
+            urls={resumeImagesUrls}
+          />
         ))}
         <Flex>
           <Button

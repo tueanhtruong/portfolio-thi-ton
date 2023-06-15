@@ -1,10 +1,14 @@
 import { useVideoDispatch } from "contexts/video/video.provider";
 import Image from "./image";
 
-const ImageBtn = ({ src, alt, sx = {} }) => {
+const ImageBtn = ({ src, alt, sx = {}, urls = [], startIndex = 0 }) => {
   const dispatch = useVideoDispatch();
   const handleVideoOpen = () => {
-    dispatch({ type: "SET_OPEN", url: src });
+    dispatch(
+      urls.length === 0
+        ? { type: "SET_OPEN", url: src }
+        : { type: "SET_OPEN_LIGHTBOX", urls, startIndex }
+    );
   };
   return (
     <Image

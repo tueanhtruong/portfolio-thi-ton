@@ -329,6 +329,52 @@ export const responsiveSettings = [
   },
 ];
 
+const bannerUrls = [
+  { url: banner1, title: "Oh Canvas static 1" },
+  { url: banner2, title: "Oh Canvas static 2" },
+  { url: banner3, title: "Oh Canvas static 3" },
+];
+
+const giftHeaderUrls = GiftHeader.map((u, idx) => ({
+  url: u,
+  title: `My article static ${idx + 1}`,
+}));
+
+const giftImagesUrls = GiftImages.map((u, idx) => ({
+  url: u,
+  title: `Gift Ideas article ${idx + 1}`,
+}));
+
+const weddingImagesUrls = WeddingImages.map((u, idx) => ({
+  url: u,
+  title: `Wedding Planning article ${idx + 1}`,
+}));
+
+const petImagesUrls = PetImages.map((u, idx) => ({
+  url: u,
+  title: `Pets article ${idx + 1}`,
+}));
+
+const financeImagesUrls = FinanceImages.map((u, idx) => ({
+  url: u,
+  title: `Finance article ${idx + 1}`,
+}));
+
+const productImagesUrls = ProductImages.map((u, idx) => ({
+  url: u,
+  title: `Product review article ${idx + 1}`,
+}));
+
+const fashionImagesUrls = FashionImages.map((u, idx) => ({
+  url: u,
+  title: `Fashion article ${idx + 1}`,
+}));
+
+const homeImagesUrls = HomeImages.map((u, idx) => ({
+  url: u,
+  title: `Home decor article ${idx + 1}`,
+}));
+
 export default function IndexPage() {
   return (
     <>
@@ -378,16 +424,22 @@ export default function IndexPage() {
                 sx={commonStyles.bannerImg}
                 src={banner1}
                 alt="web-content-banner1"
+                urls={bannerUrls}
+                startIndex={0}
               />
               <ImageBtn
                 sx={commonStyles.bannerImg}
                 src={banner2}
                 alt="web-content-banner2"
+                urls={bannerUrls}
+                startIndex={1}
               />
               <ImageBtn
                 sx={commonStyles.bannerImg}
                 src={banner3}
                 alt="web-content-banner3"
+                urls={bannerUrls}
+                startIndex={2}
               />
             </Flex>
             <Heading as="p" sx={commonStyles.caption}>
@@ -408,6 +460,8 @@ export default function IndexPage() {
                     sx={{ height: 580, objectFit: "cover" }}
                     src={img}
                     alt={`gift-statistic-works-${idx}`}
+                    startIndex={idx}
+                    urls={giftHeaderUrls}
                   />
                 </Box>
               ))}
@@ -441,6 +495,8 @@ export default function IndexPage() {
                     sx={{ height: 580 }}
                     src={img}
                     alt={`gift-works-${idx}`}
+                    startIndex={idx}
+                    urls={giftImagesUrls}
                   />
                 </Box>
               ))}
@@ -495,6 +551,8 @@ export default function IndexPage() {
                     sx={{ height: 580 }}
                     src={img}
                     alt={`wedding-works-${idx}`}
+                    startIndex={idx}
+                    urls={weddingImagesUrls}
                   />
                 </Box>
               ))}
@@ -548,6 +606,8 @@ export default function IndexPage() {
                     sx={{ height: 580 }}
                     src={img}
                     alt={`pet-works-${idx}`}
+                    startIndex={idx}
+                    urls={petImagesUrls}
                   />
                 </Box>
               ))}
@@ -600,6 +660,8 @@ export default function IndexPage() {
                     sx={{ height: 580 }}
                     src={img}
                     alt={`home-decor-works-${idx}`}
+                    startIndex={idx}
+                    urls={homeImagesUrls}
                   />
                 </Box>
               ))}
@@ -639,6 +701,8 @@ export default function IndexPage() {
                     sx={{ height: 580 }}
                     src={img}
                     alt={`finance-works-${idx}`}
+                    startIndex={idx}
+                    urls={financeImagesUrls}
                   />
                 </Box>
               ))}
@@ -678,6 +742,8 @@ export default function IndexPage() {
                     sx={{ height: 580 }}
                     src={img}
                     alt={`product-review-works-${idx}`}
+                    startIndex={idx}
+                    urls={productImagesUrls}
                   />
                 </Box>
               ))}
@@ -714,6 +780,8 @@ export default function IndexPage() {
                     sx={{ height: 580 }}
                     src={img}
                     alt={`fashion-works-${idx}`}
+                    startIndex={idx}
+                    urls={fashionImagesUrls}
                   />
                 </Box>
               ))}

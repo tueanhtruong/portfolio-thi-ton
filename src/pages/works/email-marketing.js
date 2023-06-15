@@ -29,6 +29,11 @@ const OtherWorkItems = [
 
 const EmailImages = [email1, email2];
 
+const emailImagesUrls = EmailImages.map((u, idx) => ({
+  url: u,
+  title: `Email marketing ${idx + 1}`,
+}));
+
 const scrollOptions = [
   {
     path: "email-marketing",
@@ -62,6 +67,8 @@ export default function IndexPage() {
             sx={{ width: "100%" }}
             src={img}
             alt={`keyword-works-${idx}`}
+            startIndex={idx}
+            urls={emailImagesUrls}
           />
         ))}
         <Heading

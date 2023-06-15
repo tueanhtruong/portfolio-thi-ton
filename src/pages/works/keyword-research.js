@@ -54,6 +54,11 @@ const KeywordImages = [
   keyword12,
 ];
 
+const keywordImagesUrls = KeywordImages.map((u, idx) => ({
+  url: u,
+  title: `Keyword research ${idx + 1}`,
+}));
+
 const scrollOptions = [
   {
     path: "keyword-research",
@@ -96,6 +101,8 @@ export default function IndexPage() {
                 sx={{ height: 580, objectFit: "cover" }}
                 src={img}
                 alt={`keyword-works-${idx}`}
+                startIndex={idx}
+                urls={keywordImagesUrls}
               />
             </Box>
           ))}

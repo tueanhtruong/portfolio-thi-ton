@@ -7,6 +7,7 @@ import "swiper/swiper-bundle.min.css";
 import "react-slideshow-image/dist/styles.css";
 import "typeface-dm-sans";
 import "./styles.css";
+import "react-awesome-lightbox/build/style.css";
 import "@fontsource-variable/open-sans";
 import { ThemeProvider } from "theme-ui";
 import { StickyProvider } from "contexts/app/app.provider";
