@@ -27,8 +27,9 @@ export default function CustomApp({ Component, pageProps }) {
       <StickyProvider>
         <VideoProvider>
           <SEO
-            description="I am currently a Mid-Level Content SEO Specialist at AB Media in Da Nang. I am a creative, organized, and efficient specialist with 3+ years of English content writing experience and knowledge of search engine algorithms and ranking techniques. I'm also skilled with keyword research and data mining instruments such as Google Search Console, Google Keyword Planner, Google Analytics, Ahrefs, Majestic, Screaming Frog, Keyword Tool, SEO Quake, Surferseo, SERP Robot, etc."
-            title="Thi Ton - Content SEO Specialist"
+            description="A specialist in writing content with experience of search engine algorithms. I'm also skilled with keyword research, data mining instruments, ranking techniques."
+            title="Thi Ton - SEO Executive Portfolio"
+            author="Ton Nu Mai Thi"
           />
           <Component {...pageProps} />
         </VideoProvider>
