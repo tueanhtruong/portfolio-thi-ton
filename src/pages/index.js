@@ -1,4 +1,3 @@
-// import SEO from "components/seo";
 // import Layout from "components/layout";
 // import Modal from "components/modal";
 import Banner from "sections/banner";
