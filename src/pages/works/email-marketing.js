@@ -67,6 +67,18 @@ export default function IndexPage() {
           Email Marketing
         </Heading>
         <Heading as="p" sx={{ ...commonStyles.p, marginBottom: 32 }}>
+          As a content writer, I also have an opportunity to generate some email
+          marketing.
+        </Heading>
+        <Heading
+          as="p"
+          sx={{
+            ...commonStyles.p,
+            marginBottom: 32,
+            color: "#999",
+            fontSize: 16,
+          }}
+        >
           This project is about creating email marketing content for an
           e-commerce website. These are automation emails for the
           lastest-purchasing anniversaries.
@@ -83,7 +95,13 @@ export default function IndexPage() {
         ))}
         <Heading
           as="p"
-          sx={{ ...commonStyles.p, marginBottom: 32, marginTop: 64 }}
+          sx={{
+            ...commonStyles.p,
+            marginBottom: 32,
+            marginTop: 64,
+            color: "#999",
+            fontSize: 16,
+          }}
         >
           This is an email marketing campaign targeting the F&B Merchants in
           Singapore to provide them with a “FREE Point of Sale (POS)”.
