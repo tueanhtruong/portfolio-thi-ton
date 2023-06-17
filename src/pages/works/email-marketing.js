@@ -6,6 +6,10 @@ import { PATHS } from "theme/constant";
 
 import email1 from "assets/email/e1.webp";
 import email2 from "assets/email/e2.webp";
+import email3 from "assets/email/e3.webp";
+import email4 from "assets/email/e4.webp";
+import email5 from "assets/email/e5.webp";
+
 import socialContent from "assets/social-content.webp";
 import keyWord from "assets/key-word.webp";
 import { FigureImage } from ".";
@@ -28,10 +32,16 @@ const OtherWorkItems = [
 ];
 
 const EmailImages = [email1, email2];
+const EmailFBImages = [email3, email4, email5];
 
 const emailImagesUrls = EmailImages.map((u, idx) => ({
   url: u,
   title: `Email marketing ${idx + 1}`,
+}));
+
+const emailFBImagesUrls = EmailFBImages.map((u, idx) => ({
+  url: u,
+  title: `F&B Merchants email marketing ${idx + 1}`,
 }));
 
 const scrollOptions = [
@@ -69,6 +79,22 @@ export default function IndexPage() {
             alt={`keyword-works-${idx}`}
             startIndex={idx}
             urls={emailImagesUrls}
+          />
+        ))}
+        <Heading
+          as="p"
+          sx={{ ...commonStyles.p, marginBottom: 32, marginTop: 64 }}
+        >
+          This is an email marketing campaign targeting the F&B Merchants in
+          Singapore to provide them with a “FREE Point of Sale (POS)”.
+        </Heading>
+        {EmailFBImages.map((img, idx) => (
+          <ImageBtn
+            sx={{ width: "100%" }}
+            src={img}
+            alt={`emailFBImages-works-${idx}`}
+            startIndex={idx}
+            urls={emailFBImagesUrls}
           />
         ))}
         <Heading
