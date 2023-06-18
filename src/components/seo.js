@@ -47,6 +47,12 @@ export default function SEO({
       {metaData.map(({ name, content }, i) => (
         <meta key={i} name={name} content={content} />
       ))}
+      Thi Ton
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-3DRWWKZHN6"
+      ></script>
+      <script src="./googleTag.js"></script>
     </Head>
   );
 }
