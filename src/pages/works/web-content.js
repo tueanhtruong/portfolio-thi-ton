@@ -423,7 +423,8 @@ export default function IndexPage() {
               <ImageBtn
                 sx={commonStyles.bannerImg}
                 src={banner1}
-                alt="web-content-banner1"
+                alt="oh-canvas-static-1"
+                download="oh-canvas-static-1.webp"
                 urls={bannerUrls}
                 startIndex={0}
               />

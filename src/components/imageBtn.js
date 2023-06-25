@@ -1,7 +1,14 @@
 import { useVideoDispatch } from "contexts/video/video.provider";
 import Image from "./image";
 
-const ImageBtn = ({ src, alt, sx = {}, urls = [], startIndex = 0 }) => {
+const ImageBtn = ({
+  src,
+  alt,
+  sx = {},
+  urls = [],
+  startIndex = 0,
+  ...props
+}) => {
   const dispatch = useVideoDispatch();
   const handleVideoOpen = () => {
     dispatch(
@@ -16,6 +23,7 @@ const ImageBtn = ({ src, alt, sx = {}, urls = [], startIndex = 0 }) => {
       alt={alt}
       sx={{ ...sx, cursor: "zoom-in" }}
       onClick={handleVideoOpen}
+      {...props}
     />
   );
 };

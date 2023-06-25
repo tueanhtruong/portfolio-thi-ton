@@ -3,15 +3,24 @@ import Layout from "components/layout";
 import ModalImage from "components/modalImage";
 import { Box, Flex, Heading, Button } from "theme-ui";
 import { PATHS } from "theme/constant";
+import { Slide } from "react-slideshow-image";
 
 import social1 from "assets/social-content/s1.webp";
 import social2 from "assets/social-content/s2.webp";
 import social3 from "assets/social-content/s3.webp";
 
+import social4 from "assets/social-content/s4.webp";
+import social5 from "assets/social-content/s5.webp";
+import social6 from "assets/social-content/s6.webp";
+import social7 from "assets/social-content/s7.webp";
+import social8 from "assets/social-content/s8.webp";
+import social9 from "assets/social-content/s9.webp";
+import social10 from "assets/social-content/s10.webp";
+
 import emailMarketing from "assets/email-marketing.webp";
 import keyWord from "assets/key-word.webp";
 import { FigureImage } from ".";
-import { commonStyles } from "./web-content";
+import { commonStyles, responsiveSettings } from "./web-content";
 
 const OtherWorkItems = [
   {
@@ -30,9 +39,23 @@ const OtherWorkItems = [
   },
 ];
 
-const SocialImages = [social1, social2, social3];
+const SocialFacebookImages = [social1, social2, social3];
+const SocialContentImages = [
+  social4,
+  social5,
+  social6,
+  social7,
+  social8,
+  social9,
+  social10,
+];
 
-const socialImagesUrls = SocialImages.map((u, idx) => ({
+const socialFacebookImagesUrls = SocialFacebookImages.map((u, idx) => ({
+  url: u,
+  title: `Facebook content plan ${idx + 1}`,
+}));
+
+const socialImagesUrls = SocialContentImages.map((u, idx) => ({
   url: u,
   title: `Social content ${idx + 1}`,
 }));
@@ -60,6 +83,19 @@ export default function IndexPage() {
           Social Content
         </Heading>
         <Heading as="p" sx={{ ...commonStyles.p, marginBottom: 32 }}>
+          This page is about some of the content I generated and plans I made on
+          Facebook mainly.
+        </Heading>
+        <Heading
+          as="p"
+          sx={{ ...commonStyles.p, fontSize: 15, fontWeight: 700 }}
+        >
+          Facebook Content Plan
+        </Heading>
+        <Heading
+          as="p"
+          sx={{ ...commonStyles.p, marginBottom: 32, color: "#999" }}
+        >
           This project is about planning a content strategy on Facebook for a
           ten-member group for a fashion event. I was also responsible for
           finding sponsors, contacting guests and special guests, and setting up
@@ -79,7 +115,56 @@ export default function IndexPage() {
             Click here to see the live campaign
           </Button>
         </Flex>
-        {SocialImages.map((img, idx) => (
+        {SocialFacebookImages.map((img, idx) => (
+          <ImageBtn
+            sx={{ width: "100%" }}
+            src={img}
+            alt={`social-works-${idx}`}
+            startIndex={idx}
+            urls={socialFacebookImagesUrls}
+          />
+        ))}
+
+        <Heading
+          as="p"
+          sx={{
+            ...commonStyles.p,
+            fontSize: 15,
+            fontWeight: 700,
+            marginTop: 32,
+          }}
+        >
+          Social Content
+        </Heading>
+        <Heading
+          as="p"
+          sx={{ ...commonStyles.p, marginBottom: 32, color: "#999" }}
+        >
+          This project is about introducing a course on Enterprise Legal Status
+          and telling a story about freckle treating journey.
+        </Heading>
+        <Slide
+          indicators={true}
+          duration={5000}
+          transitionDuration={500}
+          autoplay={false}
+          slidesToScroll={3}
+          slidesToShow={3}
+          responsive={responsiveSettings}
+        >
+          {SocialContentImages.map((img, idx) => (
+            <Box sx={commonStyles.slideImg} key={`gift-statistic-works-${idx}`}>
+              <ImageBtn
+                sx={{ height: 580, objectFit: "cover" }}
+                src={img}
+                alt={`gift-statistic-works-${idx}`}
+                startIndex={idx}
+                urls={socialImagesUrls}
+              />
+            </Box>
+          ))}
+        </Slide>
+        {/* {SocialContentImages.map((img, idx) => (
           <ImageBtn
             sx={{ width: "100%" }}
             src={img}
@@ -87,11 +172,10 @@ export default function IndexPage() {
             startIndex={idx}
             urls={socialImagesUrls}
           />
-        ))}
+        ))} */}
         <Heading
           as="h3"
           sx={{ ...commonStyles.p, fontSize: "22px", mt: "40px" }}
-          id="fashion"
         >
           You may also like
         </Heading>
