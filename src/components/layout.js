@@ -1,16 +1,18 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui";
-import React, { useCallback } from "react";
+import { useGetCurrentUser } from "queries";
+import React, { useCallback, useEffect } from "react";
 import Sticky from "react-stickynode";
-import { useStickyState } from "../contexts/app/app.provider";
 import { Waypoint } from "react-waypoint";
-import { useStickyDispatch } from "../contexts/app/app.provider";
-import Header from "./header/header";
+import {
+  useStickyDispatch,
+  useStickyState,
+} from "../contexts/app/app.provider";
 import Footer from "./footer/footer";
+import Header from "./header/header";
 
 export default function Layout({ children, scrollOptions, endButton }) {
   const isSticky = useStickyState("isSticky");
   const dispatch = useStickyDispatch();
+  const { user } = useGetCurrentUser();
   const setSticky = useCallback(
     () => dispatch({ type: "SET_STICKY" }),
     [dispatch]
@@ -19,6 +21,11 @@ export default function Layout({ children, scrollOptions, endButton }) {
     () => dispatch({ type: "REMOVE_STICKY" }),
     [dispatch]
   );
+
+  useEffect(() => {
+    if (user) dispatch({ type: "SET_AUTH", auth: true });
+    else dispatch({ type: "SET_AUTH", auth: false });
+  }, [user]);
 
   const onWaypointPositionChange = ({ currentPosition }) => {
     if (currentPosition === "above") {

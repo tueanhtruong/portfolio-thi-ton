@@ -1,9 +1,8 @@
-import React, { useState } from "react";
 import { keyframes } from "@emotion/core";
-import { Box, Heading, Text, Button, Image } from "theme-ui";
 import { Link } from "components/link";
-import VideoBtn from "components/video-btn";
+import { useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
+import { Box, Heading, Text } from "theme-ui";
 
 const PopularCard = (props) => {
   const [status, setStatus] = useState(props.expanded);

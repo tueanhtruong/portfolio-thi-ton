@@ -159,6 +159,12 @@ export default {
       color: "#00A99D",
       lineHeight: "40px",
     },
+    error: {
+      fontWeight: "400",
+      fontSize: "13px",
+      lineHeight: "20px",
+      color: "red",
+    },
   },
   links: {
     bold: {

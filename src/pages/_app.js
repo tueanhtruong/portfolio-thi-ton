@@ -1,24 +1,28 @@
-import { useEffect } from "react";
-import Router from "next/router";
-import { initGA, logPageView } from "analytics";
-import "rc-drawer/assets/index.css";
-import "react-modal-video/css/modal-video.min.css";
-import "swiper/swiper-bundle.min.css";
-import "react-slideshow-image/dist/styles.css";
-import "typeface-dm-sans";
-import "./styles.css";
-import "react-awesome-lightbox/build/style.css";
 import "@fontsource-variable/open-sans";
-import { ThemeProvider } from "theme-ui";
+import { initGA, logPageView } from "analytics";
+import "bulma/css/bulma.css";
+import SEO from "components/seo";
 import { StickyProvider } from "contexts/app/app.provider";
 import { VideoProvider } from "contexts/video/video.provider";
+import Router from "next/router";
+import "rc-drawer/assets/index.css";
+import { useEffect } from "react";
+import "react-awesome-lightbox/build/style.css";
+import "react-modal-video/css/modal-video.min.css";
+import "react-slideshow-image/dist/styles.css";
+import "swiper/swiper-bundle.min.css";
+import { SWRConfig } from "swr";
 import theme from "theme";
-import SEO from "components/seo";
+import { ThemeProvider } from "theme-ui";
+import "typeface-dm-sans";
+import "./styles.css";
+// Import the functions you need from the SDKs you need
 
 export default function CustomApp({ Component, pageProps }) {
   useEffect(() => {
     initGA();
     logPageView();
+
     Router.events.on("routeChangeComplete", logPageView);
   }, []);
 
@@ -31,7 +35,15 @@ export default function CustomApp({ Component, pageProps }) {
             title="Thi Ton - SEO Executive Portfolio"
             author="Ton Nu Mai Thi"
           />
-          <Component {...pageProps} />
+          <SWRConfig
+            value={{
+              onError: (error, key) => {
+                console.log("error, key: ", error, key);
+              },
+            }}
+          >
+            <Component {...pageProps} />
+          </SWRConfig>
         </VideoProvider>
       </StickyProvider>
     </ThemeProvider>

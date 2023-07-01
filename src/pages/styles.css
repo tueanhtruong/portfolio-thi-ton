@@ -35,3 +35,13 @@
 .indicators {
   padding-inline-start: 0px;
 }
+
+html {
+  background-color: unset;
+}
+
+.modal-loading {
+  .lb-header {
+    opacity: 0;
+  }
+}

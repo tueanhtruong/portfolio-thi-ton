@@ -6,4 +6,7 @@ export const PATHS = {
   KEYWORD_RESEARCH: "/works/keyword-research",
   SOCIAL_CONTENT: "/works/social-content",
   EMAIL_MARKETING: "/works/email-marketing",
+  /////////////// ADMIN ///////////////
+  ADMIN: "/admin",
+  ADMIN_LOGIN: "/admin/login",
 };

@@ -1,21 +1,21 @@
 import ImageBtn from "components/imageBtn";
 import Layout from "components/layout";
 import ModalImage from "components/modalImage";
-import { Box, Flex, Heading, Button } from "theme-ui";
-import { PATHS } from "theme/constant";
 import { Slide } from "react-slideshow-image";
+import { Box, Button, Flex, Heading } from "theme-ui";
+import { PATHS } from "theme/constant";
 
 import social1 from "assets/social-content/s1.webp";
 import social2 from "assets/social-content/s2.webp";
 import social3 from "assets/social-content/s3.webp";
 
+import social10 from "assets/social-content/s10.webp";
 import social4 from "assets/social-content/s4.webp";
 import social5 from "assets/social-content/s5.webp";
 import social6 from "assets/social-content/s6.webp";
 import social7 from "assets/social-content/s7.webp";
 import social8 from "assets/social-content/s8.webp";
 import social9 from "assets/social-content/s9.webp";
-import social10 from "assets/social-content/s10.webp";
 
 import emailMarketing from "assets/email-marketing.webp";
 import keyWord from "assets/key-word.webp";
@@ -164,15 +164,7 @@ export default function IndexPage() {
             </Box>
           ))}
         </Slide>
-        {/* {SocialContentImages.map((img, idx) => (
-          <ImageBtn
-            sx={{ width: "100%" }}
-            src={img}
-            alt={`social-works-${idx}`}
-            startIndex={idx}
-            urls={socialImagesUrls}
-          />
-        ))} */}
+
         <Heading
           as="h3"
           sx={{ ...commonStyles.p, fontSize: "22px", mt: "40px" }}
