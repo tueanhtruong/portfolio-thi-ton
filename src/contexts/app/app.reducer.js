@@ -2,14 +2,16 @@ export const initialState = {
   isSticky: false,
   isSidebarSticky: true,
   isAuthenticated: false,
+  user: null,
 };
 
-export function reducer(state, { type, auth }) {
+export function reducer(state, { type, auth, user }) {
   switch (type) {
     case "SET_AUTH":
       return {
         ...state,
         isAuthenticated: auth,
+        user,
       };
     case "SET_STICKY":
       return {

@@ -32,5 +32,14 @@ export async function authResponseWrapper(func, [...args] = []) {
 export const QUERY_KEYS = {
   _INIT_LOGIN: "_INIT_LOGIN",
   _LOG_OUT: "_LOG_OUT",
+  _EMAIL_VERIFY: "_EMAIL_VERIFY",
   _INIT_CURRENT_USER: "_INIT_CURRENT_USER",
+  _BLOG_TYPES: "_BLOG_TYPES",
+  _SET_BLOG_TYPE: "_SET_BLOG_TYPE",
+};
+
+export const DB_KEYS = {
+  BLOG_COLLECTION: "blogs",
+  BLOG_TYPES: "blog_types",
+  BLOG_TYPES_FIELD: "types",
 };

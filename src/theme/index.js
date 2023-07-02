@@ -294,6 +294,16 @@ export default {
         outline: "none",
       },
     },
+    select: {
+      borderRadius: 8,
+      borderColor: "border_color",
+      height: 60,
+      "&:focus": {
+        borderColor: "primary",
+        boxShadow: (t) => `0 0 0 2px ${t.colors.primary}`,
+        outline: "none",
+      },
+    },
   },
 
   badges: {

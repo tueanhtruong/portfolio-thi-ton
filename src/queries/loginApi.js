@@ -1,6 +1,19 @@
 import firebase from "firebase";
 import { getApp, getApps, initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import {
+  getAuth,
+  sendEmailVerification,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
+import {
+  collection,
+  doc,
+  getDocs,
+  getFirestore,
+  setDoc,
+} from "firebase/firestore";
+import { DB_KEYS } from "./helpers";
 
 // export function newCancelToken(timeout = 30000) {
 // 	const source = CancelToken.source();
@@ -15,6 +28,9 @@ import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 const create = () => {
   const app = getApps().length > 0 ? getApp() : initializeApp(firebase.config);
+  const db = getFirestore(app);
+  const auth = getAuth(app);
+
   //
   // Create and configure an apisauce-based api object.
   //
@@ -40,8 +56,6 @@ const create = () => {
 
   // ====================== Auth ======================
   const initLogin = (payload) => {
-    const auth = getAuth(app);
-
     return signInWithEmailAndPassword(
       auth,
       payload.arg.email,
@@ -54,8 +68,24 @@ const create = () => {
     return auth;
   };
   const logOut = () => {
-    const auth = getAuth(app);
     return signOut(auth);
+  };
+  const verifyEmail = () => {
+    return sendEmailVerification(auth.currentUser);
+  };
+
+  const getBlogTypes = async () => {
+    const docRef = collection(db, DB_KEYS.BLOG_TYPES);
+    const querySnapshot = await getDocs(docRef);
+    let res = [];
+    querySnapshot.forEach((doc) => res.push(doc.data() ?? {}));
+    return res;
+  };
+
+  const setBlogType = async ({ arg }) => {
+    console.log("arg: ", arg);
+    const docRef = doc(db, DB_KEYS.BLOG_TYPES, arg.id);
+    return await setDoc(docRef, arg);
   };
   // api.post("/user/customer/login", payload.arg, newCancelToken());
 
@@ -72,6 +102,9 @@ const create = () => {
     initLogin,
     getCurrentAuth,
     logOut,
+    getBlogTypes,
+    verifyEmail,
+    setBlogType,
   };
 };
 

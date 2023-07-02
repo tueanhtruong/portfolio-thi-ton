@@ -23,8 +23,8 @@ export default function Layout({ children, scrollOptions, endButton }) {
   );
 
   useEffect(() => {
-    if (user) dispatch({ type: "SET_AUTH", auth: true });
-    else dispatch({ type: "SET_AUTH", auth: false });
+    if (user) dispatch({ type: "SET_AUTH", auth: true, user });
+    else dispatch({ type: "SET_AUTH", auth: false, user: null });
   }, [user]);
 
   const onWaypointPositionChange = ({ currentPosition }) => {

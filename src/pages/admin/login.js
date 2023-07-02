@@ -50,7 +50,6 @@ export default function IndexPage() {
     } = e;
     e.preventDefault();
     initLogin({ email: email.value, password: password.value });
-    console.log("target: ", email.value, password.value);
   };
   return (
     <Layout>
