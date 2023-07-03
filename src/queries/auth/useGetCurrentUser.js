@@ -1,6 +1,6 @@
 import { onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
-import { LoginApi } from ".";
+import { LoginApi } from "..";
 
 export const useGetCurrentUser = () => {
   const auth = LoginApi.getCurrentAuth();

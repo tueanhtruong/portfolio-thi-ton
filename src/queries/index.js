@@ -1,10 +1,13 @@
 import loginApi from "./loginApi";
 
-export * from "./useCheckPageValid";
-export * from "./useGetBlogTypes";
-export * from "./useGetCurrentUser";
-export * from "./useInitLogin";
-export * from "./useSetBlogType";
-export * from "./useVerifyEmail";
+export * from "./auth/useCheckPageValid";
+export * from "./auth/useGetCurrentUser";
+export * from "./auth/useInitLogin";
+export * from "./auth/useLogOut";
+export * from "./auth/useVerifyEmail";
+/////////////////////////////////////////////////
+export * from "./blogs/useDeleteBlogType";
+export * from "./blogs/useGetBlogTypes";
+export * from "./blogs/useSetBlogType";
 
 export const LoginApi = loginApi.create();

@@ -1,6 +1,6 @@
 import useSWR from "swr";
-import { LoginApi } from ".";
-import { QUERY_KEYS, authResponseWrapper } from "./helpers";
+import { LoginApi } from "..";
+import { QUERY_KEYS, authResponseWrapper } from "../helpers";
 
 export function useGetBlogTypes(options) {
   const { data, error, isLoading, mutate } = useSWR(

@@ -1,16 +1,19 @@
 /** @jsx jsx */
-import { Container, Flex, jsx } from "theme-ui";
 import { Link } from "components/link";
 import Logo from "components/logo";
 import { Link as ScrollLink } from "react-scroll";
+import { Container, Flex, jsx } from "theme-ui";
 
+import { useStickyState } from "contexts/app/app.provider";
 import { DrawerProvider } from "contexts/drawer/drawer.provider";
+import { useRouter } from "next/router";
 import { NavigationPaths } from "./header.data";
 import MobileDrawer from "./mobileDrawer";
-import { useRouter } from "next/router";
 
-export default function Header({ className, endButton, scrollOptions = [] }) {
+export default function Header({ className }) {
   const { pathname } = useRouter();
+  const scrollOptions = useStickyState("scrollOptions");
+  const endButton = useStickyState("endButton");
 
   return (
     <DrawerProvider>

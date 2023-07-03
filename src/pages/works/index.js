@@ -1,11 +1,10 @@
-import Layout from "components/layout";
-import { Box, Heading, Flex } from "theme-ui";
-import webContent from "assets/web-content.webp";
-import socialContent from "assets/social-content.webp";
-import keyWord from "assets/key-word.webp";
 import emailMarketing from "assets/email-marketing.webp";
-import { Link } from "components/link";
+import keyWord from "assets/key-word.webp";
+import socialContent from "assets/social-content.webp";
+import webContent from "assets/web-content.webp";
 import Image from "components/image";
+import { Link } from "components/link";
+import { Box, Flex, Heading } from "theme-ui";
 import { PATHS } from "theme/constant";
 
 const WorkItems = [
@@ -39,22 +38,20 @@ const WorkItems = [
 
 export default function IndexPage() {
   return (
-    <Layout>
-      <Box sx={styles.container}>
-        <Heading as="h1" sx={styles.h1}>
-          My Works
-        </Heading>
-        <Heading as="p" sx={styles.p}>
-          Welcome to my page! Below are some of my recent works. Scroll down for
-          more details!
-        </Heading>
-        <Flex sx={{ flexWrap: "wrap", justifyContent: "center" }}>
-          {WorkItems.map((item) => (
-            <FigureImage {...item} key={`FigureImage-${item.path}`} />
-          ))}
-        </Flex>
-      </Box>
-    </Layout>
+    <Box sx={styles.container}>
+      <Heading as="h1" sx={styles.h1}>
+        My Works
+      </Heading>
+      <Heading as="p" sx={styles.p}>
+        Welcome to my page! Below are some of my recent works. Scroll down for
+        more details!
+      </Heading>
+      <Flex sx={{ flexWrap: "wrap", justifyContent: "center" }}>
+        {WorkItems.map((item) => (
+          <FigureImage {...item} key={`FigureImage-${item.path}`} />
+        ))}
+      </Flex>
+    </Box>
   );
 }
 

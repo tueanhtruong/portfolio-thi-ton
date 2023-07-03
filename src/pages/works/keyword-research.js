@@ -1,5 +1,4 @@
 import ImageBtn from "components/imageBtn";
-import Layout from "components/layout";
 import ModalImage from "components/modalImage";
 import { Slide } from "react-slideshow-image";
 import { Box, Flex, Heading } from "theme-ui";
@@ -20,6 +19,8 @@ import keyword9 from "assets/keyword/k9.webp";
 
 import emailMarketing from "assets/email-marketing.webp";
 import webContent from "assets/web-content.webp";
+import { useStickyDispatch } from "contexts/app/app.provider";
+import { useEffect } from "react";
 import { FigureImage } from ".";
 import { commonStyles, responsiveSettings } from "./web-content";
 
@@ -72,8 +73,23 @@ const endButton = {
 };
 
 export default function IndexPage() {
+  const dispatch = useStickyDispatch();
+  useEffect(() => {
+    dispatch({
+      type: "SET_LAYOUT_PROPS",
+      scrollOptions,
+      endButton,
+    });
+    return () =>
+      dispatch({
+        type: "SET_LAYOUT_PROPS",
+        scrollOptions: [],
+        endButton: null,
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
-    <Layout scrollOptions={scrollOptions} endButton={endButton}>
+    <>
       <Box
         sx={{ ...commonStyles.container, paddingTop: 80, marginTop: 60 }}
         id="keyword-research"
@@ -121,6 +137,6 @@ export default function IndexPage() {
         </Flex>
       </Box>
       <ModalImage alt="Web Content Works" />
-    </Layout>
+    </>
   );
 }

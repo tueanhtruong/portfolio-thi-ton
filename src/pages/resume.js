@@ -1,5 +1,4 @@
 import ImageBtn from "components/imageBtn";
-import Layout from "components/layout";
 import ModalImage from "components/modalImage";
 import { Box, Button, Flex, Heading } from "theme-ui";
 import { PATHS } from "theme/constant";
@@ -7,8 +6,8 @@ import { PATHS } from "theme/constant";
 import resume1 from "assets/resume/r1.webp";
 import resume2 from "assets/resume/r2.webp";
 
-import { commonStyles } from "./works/web-content";
 import { useRouter } from "next/router";
+import { commonStyles } from "./works/web-content";
 
 const ResumeImages = [resume1, resume2];
 
@@ -20,7 +19,7 @@ const resumeImagesUrls = ResumeImages.map((u, idx) => ({
 export default function IndexPage() {
   const router = useRouter();
   return (
-    <Layout>
+    <>
       <Box sx={commonStyles.container} id="resume-content">
         <Heading as="h1" sx={commonStyles.h1}>
           Resume
@@ -83,6 +82,6 @@ export default function IndexPage() {
         </Flex>
       </Box>
       <ModalImage alt="Web Content Works" />
-    </Layout>
+    </>
   );
 }

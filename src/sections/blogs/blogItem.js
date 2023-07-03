@@ -1,7 +1,7 @@
+import { useRouter } from "next/router";
 import { CommonFlexRowStyle, SectionStyle } from "pages/admin/login";
-import { useGetBlogTypes, useSetBlogType } from "queries";
 import { useState } from "react";
-import { FaEdit } from "react-icons/fa";
+import { FaPen, FaTrash } from "react-icons/fa";
 import {
   Box,
   Button,
@@ -12,26 +12,7 @@ import {
   Select,
   Text,
 } from "theme-ui";
-
-const BlogTypes = ({ isAuth = false }) => {
-  if (!isAuth) return null;
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { data = [], refresh, isLoading } = useGetBlogTypes();
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { setBlog, isSetting } = useSetBlogType({
-    onSuccess() {
-      refresh();
-    },
-  });
-  const isTotalLoading = isLoading || isSetting;
-  return (
-    <Box sx={{ opacity: isTotalLoading ? 0.5 : 1 }}>
-      {data.map((blog, idx) => (
-        <BlogItem {...blog} key={`blog-item-${idx}`} setBlog={setBlog} />
-      ))}
-    </Box>
-  );
-};
+import { PATHS } from "theme/constant";
 
 export const BlogSectionStyles = {
   ...SectionStyle,
@@ -52,8 +33,9 @@ export const BlogItem = ({
   id,
   setBlog,
   isAddNew = false,
-  onCancel,
+  deleteBlog,
 }) => {
+  const router = useRouter();
   const [isEdit, setEdit] = useState(isAddNew);
   const handleEditClick = (e) => {
     e.preventDefault();
@@ -68,8 +50,16 @@ export const BlogItem = ({
     setBlog(payload);
     setEdit((pre) => !pre);
   };
+  const handleDeleteType = (e) => {
+    e.preventDefault();
+    const payload = { id };
+    deleteBlog(payload);
+  };
   return !isEdit ? (
-    <Flex sx={BlogSectionStyles}>
+    <Flex
+      sx={BlogSectionStyles}
+      onClick={() => router.push(`${PATHS.ADMIN_BLOG_TYPES}/${id}`)}
+    >
       <Box>
         <Text variant="heading">{name}</Text>
         <Flex
@@ -90,13 +80,28 @@ export const BlogItem = ({
           flexDirection: "row",
           display: "flex",
           alignItem: "center",
-          cursor: "pointer",
           height: "fit-content",
         }}
-        onClick={handleEditClick}
       >
-        <Box className="mr-2">Edit</Box>
-        <FaEdit size={24} />
+        <Flex
+          className="mr-4"
+          onClick={handleEditClick}
+          sx={{
+            cursor: "pointer",
+          }}
+        >
+          <Box className="mr-2">Edit</Box>
+          <FaPen size={20} className="mt-1" />
+        </Flex>
+        <Flex
+          onClick={handleDeleteType}
+          sx={{
+            cursor: "pointer",
+          }}
+        >
+          <Box className="mr-2 has-text-danger">Delete</Box>
+          <FaTrash color="red" size={20} className="mt-1" />
+        </Flex>
       </Flex>
     </Flex>
   ) : (
@@ -136,4 +141,4 @@ export const BlogItem = ({
   );
 };
 
-export default BlogTypes;
+export default BlogItem;

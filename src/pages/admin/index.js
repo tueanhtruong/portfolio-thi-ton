@@ -1,12 +1,9 @@
-import Layout from "components/layout";
 import ModalLoading from "components/modalLoading";
 import { useStickyState } from "contexts/app/app.provider";
 import { useRouter } from "next/router";
 import { commonStyles } from "pages/works/web-content";
-import { useVerifyEmail } from "queries";
-import { useLogOut } from "queries/useLogOut";
-import AddBlogType from "sections/addBlogType";
-import BlogTypes from "sections/blogTypes";
+import { useLogOut, useVerifyEmail } from "queries";
+import { AddBlogType, BlogTypes } from "sections/blogs";
 import { Box, Button, Heading } from "theme-ui";
 import { PATHS } from "theme/constant";
 
@@ -20,7 +17,7 @@ export default function IndexPage() {
   const isAuthenticated = useStickyState("isAuthenticated");
 
   return (
-    <Layout>
+    <>
       <Box sx={commonStyles.container} id="resume-content">
         <Heading as="h1" sx={commonStyles.h1}>
           Dashboard
@@ -42,6 +39,6 @@ export default function IndexPage() {
         )}
         <ModalLoading isLoading={isMutating || isVerifying} />
       </Box>
-    </Layout>
+    </>
   );
 }

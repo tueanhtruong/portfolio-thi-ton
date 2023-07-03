@@ -41,7 +41,6 @@ import giftHead1 from "assets/web-contents/gh1.webp";
 import giftHead2 from "assets/web-contents/gh2.webp";
 import giftHead3 from "assets/web-contents/gh3.webp";
 import ImageBtn from "components/imageBtn";
-import Layout from "components/layout";
 import ModalImage from "components/modalImage";
 import Head from "next/head";
 import { Slide } from "react-slideshow-image";
@@ -131,6 +130,8 @@ import fashion9 from "assets/fashion/fa9.webp";
 
 import emailMarketing from "assets/email-marketing.webp";
 import keyWord from "assets/key-word.webp";
+import { useStickyDispatch } from "contexts/app/app.provider";
+import { useEffect } from "react";
 import { FigureImage } from ".";
 
 const OtherWorkItems = [
@@ -376,6 +377,21 @@ const homeImagesUrls = HomeImages.map((u, idx) => ({
 }));
 
 export default function IndexPage() {
+  const dispatch = useStickyDispatch();
+  useEffect(() => {
+    dispatch({
+      type: "SET_LAYOUT_PROPS",
+      scrollOptions: webContentScrollOptions,
+      endButton,
+    });
+    return () =>
+      dispatch({
+        type: "SET_LAYOUT_PROPS",
+        scrollOptions: [],
+        endButton: null,
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <>
       <Head>
@@ -384,7 +400,7 @@ export default function IndexPage() {
           href="https://portfolio-thi-ton.vercel.app/works/web-content"
         />
       </Head>
-      <Layout scrollOptions={webContentScrollOptions} endButton={endButton}>
+      <>
         <Box sx={commonStyles.container}>
           <Heading as="h1" sx={commonStyles.h1}>
             Web Contents
@@ -802,7 +818,7 @@ export default function IndexPage() {
           </Flex>
         </Box>
         <ModalImage alt="Web Content Works" />
-      </Layout>
+      </>
     </>
   );
 }

@@ -3,10 +3,18 @@ export const initialState = {
   isSidebarSticky: true,
   isAuthenticated: false,
   user: null,
+  scrollOptions: [],
+  endButton: null,
 };
 
-export function reducer(state, { type, auth, user }) {
+export function reducer(state, { type, auth, user, scrollOptions, endButton }) {
   switch (type) {
+    case "SET_LAYOUT_PROPS":
+      return {
+        ...state,
+        scrollOptions,
+        endButton,
+      };
     case "SET_AUTH":
       return {
         ...state,

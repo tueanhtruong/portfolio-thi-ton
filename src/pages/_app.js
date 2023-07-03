@@ -1,6 +1,7 @@
 import "@fontsource-variable/open-sans";
 import { initGA, logPageView } from "analytics";
 import "bulma/css/bulma.css";
+import Layout from "components/layout";
 import SEO from "components/seo";
 import { StickyProvider } from "contexts/app/app.provider";
 import { VideoProvider } from "contexts/video/video.provider";
@@ -42,7 +43,9 @@ export default function CustomApp({ Component, pageProps }) {
               },
             }}
           >
-            <Component {...pageProps} />
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
           </SWRConfig>
         </VideoProvider>
       </StickyProvider>

@@ -9,7 +9,7 @@ import {
 import Footer from "./footer/footer";
 import Header from "./header/header";
 
-export default function Layout({ children, scrollOptions, endButton }) {
+export default function Layout({ children }) {
   const isSticky = useStickyState("isSticky");
   const dispatch = useStickyDispatch();
   const { user } = useGetCurrentUser();
@@ -39,11 +39,7 @@ export default function Layout({ children, scrollOptions, endButton }) {
   return (
     <React.Fragment>
       <Sticky enabled={isSticky} innerZ={991}>
-        <Header
-          className={`${isSticky ? "sticky" : "unSticky"}`}
-          scrollOptions={scrollOptions}
-          endButton={endButton}
-        />
+        <Header className={`${isSticky ? "sticky" : "unSticky"}`} />
       </Sticky>
       <Waypoint
         onEnter={removeSticky}

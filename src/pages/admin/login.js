@@ -1,4 +1,3 @@
-import Layout from "components/layout";
 import ModalLoading from "components/modalLoading";
 import {
   Box,
@@ -52,7 +51,7 @@ export default function IndexPage() {
     initLogin({ email: email.value, password: password.value });
   };
   return (
-    <Layout>
+    <>
       <Box sx={commonStyles.container} id="resume-content">
         <Heading as="h1" sx={commonStyles.h1}>
           Login
@@ -95,6 +94,6 @@ export default function IndexPage() {
 
         <ModalLoading isLoading={isMutating} />
       </Box>
-    </Layout>
+    </>
   );
 }

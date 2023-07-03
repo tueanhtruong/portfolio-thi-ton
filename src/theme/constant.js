@@ -9,4 +9,6 @@ export const PATHS = {
   /////////////// ADMIN ///////////////
   ADMIN: "/admin",
   ADMIN_LOGIN: "/admin/login",
+  ADMIN_BLOGS: "/admin/blogs",
+  ADMIN_BLOG_TYPES: "/admin/blogs/types",
 };

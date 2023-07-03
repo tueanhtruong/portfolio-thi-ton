@@ -1,5 +1,4 @@
 import ImageBtn from "components/imageBtn";
-import Layout from "components/layout";
 import ModalImage from "components/modalImage";
 import { Box, Flex, Heading } from "theme-ui";
 import { PATHS } from "theme/constant";
@@ -10,8 +9,10 @@ import email3 from "assets/email/e3.webp";
 import email4 from "assets/email/e4.webp";
 import email5 from "assets/email/e5.webp";
 
-import socialContent from "assets/social-content.webp";
 import keyWord from "assets/key-word.webp";
+import socialContent from "assets/social-content.webp";
+import { useStickyDispatch } from "contexts/app/app.provider";
+import { useEffect } from "react";
 import { FigureImage } from ".";
 import { commonStyles } from "./web-content";
 
@@ -57,8 +58,23 @@ const endButton = {
 };
 
 export default function IndexPage() {
+  const dispatch = useStickyDispatch();
+  useEffect(() => {
+    dispatch({
+      type: "SET_LAYOUT_PROPS",
+      scrollOptions,
+      endButton,
+    });
+    return () =>
+      dispatch({
+        type: "SET_LAYOUT_PROPS",
+        scrollOptions: [],
+        endButton: null,
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
-    <Layout scrollOptions={scrollOptions} endButton={endButton}>
+    <>
       <Box
         sx={{ ...commonStyles.container, paddingTop: 80, marginTop: 60 }}
         id="email-marketing"
@@ -129,6 +145,6 @@ export default function IndexPage() {
         </Flex>
       </Box>
       <ModalImage alt="Web Content Works" />
-    </Layout>
+    </>
   );
 }

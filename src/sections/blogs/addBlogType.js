@@ -4,7 +4,7 @@ import { useGetBlogTypes, useSetBlogType } from "queries";
 import { useState } from "react";
 import { Box, Button, Flex, Heading } from "theme-ui";
 import { v4 as uuidv4 } from "uuid";
-import { BlogItem } from "./blogTypes";
+import BlogItem from "./blogItem";
 
 const AddBlogType = ({ isAuth = false }) => {
   if (!isAuth) return <Heading as="h3">Block Types</Heading>;

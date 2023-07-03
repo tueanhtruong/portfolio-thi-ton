@@ -8,6 +8,7 @@ import {
 } from "firebase/auth";
 import {
   collection,
+  deleteDoc,
   doc,
   getDocs,
   getFirestore,
@@ -83,9 +84,13 @@ const create = () => {
   };
 
   const setBlogType = async ({ arg }) => {
-    console.log("arg: ", arg);
     const docRef = doc(db, DB_KEYS.BLOG_TYPES, arg.id);
     return await setDoc(docRef, arg);
+  };
+
+  const deleteBlogType = async ({ arg }) => {
+    const docRef = doc(db, DB_KEYS.BLOG_TYPES, arg.id);
+    return await deleteDoc(docRef, arg);
   };
   // api.post("/user/customer/login", payload.arg, newCancelToken());
 
@@ -105,6 +110,7 @@ const create = () => {
     getBlogTypes,
     verifyEmail,
     setBlogType,
+    deleteBlogType,
   };
 };
 

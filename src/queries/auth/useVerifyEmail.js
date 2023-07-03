@@ -1,6 +1,6 @@
 import useSWRMutation from "swr/mutation";
-import { LoginApi } from ".";
-import { QUERY_KEYS, authResponseWrapper } from "./helpers";
+import { LoginApi } from "..";
+import { QUERY_KEYS, authResponseWrapper } from "../helpers";
 
 export function useVerifyEmail(options) {
   const { data, trigger, isMutating, error, reset } = useSWRMutation(
